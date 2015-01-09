@@ -1,0 +1,16 @@
+<h2> <%= display.name unless display.name == @production.name %> </h2>
+<% if display.number_of_votes == 0 %>
+	<h3> No votes have been counted yet. </h3>
+<% else %>
+  <%= render_stars(display.aggregate_score) %>
+	<h3> 
+    Final Score: <%= number_with_precision( display.aggregate_score, precision: 1 ) %>/10 
+		from <%= display.number_of_votes %> <%= 'vote'.pluralize(display.number_of_votes) %>
+	</h3>
+	<ul>
+		<li> <b> The People: <%= number_with_precision( display.people, precision: 1 ) %> </b> </li>
+		<li> <b> The Music: <%= number_with_precision( display.music, precision: 1 ) %> </b>	</li>
+		<li> <b> The Venue: <%= number_with_precision( display.venue, precision: 1 ) %> </b>	</li>
+		<li> <b> The Atmosphere: <%= number_with_precision( display.atmosphere, precision: 1 ) %> </b> </li>
+	</ul>
+<% end %>

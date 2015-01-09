@@ -1,0 +1,44 @@
+<%= form_for @rating, remote: true, html: { class: class_name } do |f| %>
+  <%= f.label "#{class_name}_1", content_tag(:span, '1'), { class: 'rating_button', id: 'rating_label_1' } %>
+  <%= radio_button_tag "rating_#{class_name}", 1, 
+        get_category_score(class_name, concert_id) == 1, class: 'rating_button' %>
+        
+  <%= f.label "#{class_name}_2", content_tag(:span, '2'), { class: 'rating_button', id: 'rating_label_2' } %>
+  <%= radio_button_tag "rating_#{class_name}", 2, 
+        get_category_score(class_name, concert_id) == 2, class: 'rating_button' %>
+        
+  <%= f.label "#{class_name}_3", content_tag(:span, '3'), { class: 'rating_button', id: 'rating_label_3' } %>
+  <%= radio_button_tag "rating_#{class_name}", 3, 
+        get_category_score(class_name, concert_id) == 3, class: 'rating_button' %>
+        
+  <%= f.label "#{class_name}_4", content_tag(:span, '4'), { class: 'rating_button', id: 'rating_label_4' } %>
+  <%= radio_button_tag "rating_#{class_name}", 4, 
+        get_category_score(class_name, concert_id) == 4, class: 'rating_button' %>
+        
+  <%= f.label "#{class_name}_5", content_tag(:span, '5'), { class: 'rating_button', id: 'rating_label_5' } %>
+  <%= radio_button_tag "rating_#{class_name}", 5, 
+        get_category_score(class_name, concert_id) == 5, class: 'rating_button' %>
+        
+	<%= f.label "#{class_name}_6", content_tag(:span, '6'), { class: 'rating_button', id: 'rating_label_6' } %>
+  <%= radio_button_tag "rating_#{class_name}", 6, 
+        get_category_score(class_name, concert_id) == 6, class: 'rating_button' %>
+        
+	<%= f.label "#{class_name}_7", content_tag(:span, '7'), { class: 'rating_button', id: 'rating_label_7' } %>
+  <%= radio_button_tag "rating_#{class_name}", 7, 
+        get_category_score(class_name, concert_id) == 7, class: 'rating_button' %>
+        
+	<%= f.label "#{class_name}_8", content_tag(:span, '8'), { class: 'rating_button', id: 'rating_label_8' } %>
+  <%= radio_button_tag "rating_#{class_name}", 8, 
+        get_category_score(class_name, concert_id) == 8, class: 'rating_button' %>
+        
+	<%= f.label "#{class_name}_9", content_tag(:span, '9'), { class: 'rating_button', id: 'rating_label_9' } %>
+  <%= radio_button_tag "rating_#{class_name}", 9, 
+        get_category_score(class_name, concert_id) == 9, class: 'rating_button' %>
+        
+	<%= f.label "#{class_name}_10", content_tag(:span, '10'), { class: 'rating_button', id: 'rating_label_10' } %>
+  <%= radio_button_tag "rating_#{class_name}", 10, 
+        get_category_score(class_name, concert_id) == 10, class: 'rating_button' %>
+        
+	<%= hidden_field_tag 'concert_id', concert_id %>
+  <%= hidden_field_tag 'concerts_page', @concerts_page || @concerts.current_page %>
+<% end %>

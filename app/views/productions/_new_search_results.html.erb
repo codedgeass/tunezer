@@ -1,0 +1,25 @@
+<h3> Search Results </h3>
+<% if @empty_search %>
+	<p> Search for something! </p>
+<% elsif @productions.empty? %>
+	<p> Your search turned up empty. Time to add your favorite concert to our website! </p>
+<% else %>
+	<table class="center">
+		<tr>
+			<th> Rank </th>
+			<th> Name </th>
+		</tr>
+		<% @productions.each do |production| %>
+			<tr>
+				<td> <%= production.rank.nil? ? 'N/A' : "#{production.rank}." %> </td>
+				<td> <b> <%= link_to "#{production.name}", production_path(production) %> </b> </td>
+			</tr>
+		<% end %>
+	</table>
+	<div class="pagination">
+		<%= will_paginate @productions, param_name: 'productions_page', container: false %>
+		<div class="pagination_info">
+			(<%= @productions.size %> <%= 'Production'.pluralize(@productions.size) %>)
+		</div>
+	</div>
+<% end %>

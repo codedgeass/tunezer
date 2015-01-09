@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tuneaddicts</title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if !flash.empty? %>
+	<div id="flash"> 
+		<% flash.keys.each do |k| %> 
+			<div class="<%= k %>">
+				<%= flash[k] %>
+			</div>	
+		<% end %>	
+	</div>
+<% end %>
+<div class="orange_links">
+	<%= link_to 'Home', productions_path %>
+  <% if user_signed_in? %>
+	  <%= link_to "Welcome #{current_or_guest_user.username}", profile_path(current_or_guest_user.profile.id) %>
+  <% else %>
+    Welcome <%= "#{current_or_guest_user.username}" %>
+  <% end %>
+	<% if user_signed_in? %>
+		<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+	<% else %>
+		<%= link_to 'Sign In', new_user_session_path %>
+		<%= link_to 'Sign Up', new_user_registration_path %> 
+	<% end %>
+</div>
+<%= yield %>
+</body>
+</html>
+

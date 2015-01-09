@@ -1,0 +1,13 @@
+<p> <b> Real name: </b> <%= @profile.real_name %> </p>
+<p> <b> Age: </b> <%= @profile.age %> </p>
+<p> <b> Hometown: </b> <%= @profile.hometown %> </p>
+<p> <b> Favorite artists: </b> <%= @profile.favorite_artists %> </p>
+<p> <b> Favorite songs: </b> <%= @profile.favorite_songs %> </p>
+
+<% if current_or_guest_user.id == @profile.user_id %>
+	<%= link_to 'Edit Profile', edit_profile_path(@profile.id) %>
+	<h3> Notifications </h3>
+  <div id="notifications">
+    <%= render partial: 'notifications/index' %>
+  </div>
+<% end %>

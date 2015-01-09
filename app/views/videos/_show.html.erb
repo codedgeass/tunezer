@@ -1,0 +1,11 @@
+<div class="block">
+	<div class="inline_block">
+		<h3 class="no_top_or_bottom_margins"> <%= 'Linked Video' %> </h3>
+		<%= raw youtube_embed(@video.url) %>
+		<h3 class="no_top_or_bottom_margins"> 
+			<%= link_to 'Comment on this video', production_video_path(production_id: @video.production_id, 
+            id: @video.id, reference_video: true), remote: true %>
+			<%= link_to 'Back to Videos', production_videos_path(@video.production_id, videos_page: 1), remote: true %>
+		</h3>
+	</div>
+</div>

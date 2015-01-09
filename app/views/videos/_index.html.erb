@@ -1,0 +1,29 @@
+<% if @videos.blank? %>
+  <p> <b> There are no videos to display. Add some! </b> </p>
+<% else %>
+  <div>
+    <% video_number = @videos.current_page * 2 - 2 %>
+  	<% @videos.each do |video| %>
+  		<div class="inline_block">
+        <% video_number += 1 %>
+  			<h3 class="no_top_or_bottom_margins"> #<%= video_number %> </h3>
+  			<%= raw youtube_embed(video.url) %>
+  			<h3 class="no_top_or_bottom_margins">
+          <%= link_to 'Comment on this video', production_video_path(
+                production_id: @production.id, id: video.id, reference_video: true), remote: true %> 
+          <% if current_or_guest_user.admin? %>
+            <%= link_to 'Delete Video', production_video_path(
+                  @production.id, video.id, video_number: video_number), method: :delete, remote: true %>
+          <% end %>
+        </h3>
+  		</div>
+  	<% end %>
+  </div>
+  <div class="pagination">
+  	<%= will_paginate @videos, param_name: 'videos_page', container: false, 
+  		    params: { controller: 'videos', action: 'index', production_id: @production.id } %>
+      <div class="pagination_info">
+      	(<%= pluralize(@videos.total_entries, 'Video') %>)
+      </div>
+  </div>
+<% end %>

@@ -1,0 +1,6 @@
+$('#scores').html(
+  "<%= escape_javascript render partial: 'shared/display_scores', locals: { display: @concert } %>");
+<% if @rating_just_completed %>
+	$('#vote_counted').html("<p> Your vote for <%= @concert.name %> has just been counted! </p>");
+<% end %>
+$('#show_rankings').html("<%= escape_javascript render partial: 'concerts/index' %>")

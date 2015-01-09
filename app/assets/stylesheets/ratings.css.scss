@@ -1,0 +1,24 @@
+form input.rating_button { 
+  display: none; 
+}
+form label.rating_button { 
+  cursor: pointer;
+  display: inline-block; 
+  height: 30px; 
+  width: 30px; 
+  float: left; 
+}
+form label.rating_button { 
+  background-image: asset-data-url("empty_star.gif");
+}
+  form label.rating_button.checked, form label.rating_button.glow { 
+    background-image: asset-data-url("full_star.gif");
+  }
+  form label.rating_button span { 
+    display: none;
+  }
+
+li.voting_stars {
+	display: inline-block;
+	margin: 5px 10px;
+}

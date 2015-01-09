@@ -1,0 +1,12 @@
+<% if target.errors.any? %>  
+	<div id="error_explanation">  
+	  <font color="red"> 
+      <h3> <%= pluralize(target.errors.count, "error") %> occured: </h3>
+  	  <ul>  
+    	  <% target.errors.full_messages.each do |msg| %>  
+    	    <li> <%= msg %> </li>
+    	  <% end %>  
+  	  </ul>  
+    </font>
+	</div>  
+<% end %>

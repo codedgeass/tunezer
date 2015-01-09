@@ -1,0 +1,31 @@
+a.minimize_text {
+	font-size: 0.85em; 
+}
+
+h3.no_bottom_margin {
+  margin-bottom: 0;
+}
+
+p.no_top_margin {
+	margin-top: 0;
+}
+
+span.add_left_margin {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-left: 10px;
+}
+span.minimize_text {
+	font-size: 0.85em;
+}
+
+textarea {
+	height: 80px;
+	width: 600px;
+}
+
+ul.comments {
+	width: 50em;
+	text-align: left;
+}

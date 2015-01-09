@@ -1,0 +1,3 @@
+$('#comment_content').val(function(index, val) {
+	return val + '<%= "`Video_#{@video.id}` " %>';
+});

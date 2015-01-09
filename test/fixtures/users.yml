@@ -1,0 +1,14 @@
+admin:
+  username: admin
+  email: admin@tuneaddicts.com
+  encrypted_password: <%= Devise.bcrypt(User, 'password') %>
+  
+johan:
+  username: johan
+  email: johan@tuneaddicts.com
+  encrypted_password: <%= Devise.bcrypt(User, 'password') %>
+  
+no_username:
+  username:
+  email: no_username@tuneaddicts.com
+  encrypted_password: <%= Devise.bcrypt(User, 'password') %>

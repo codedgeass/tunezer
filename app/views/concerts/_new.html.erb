@@ -1,0 +1,5 @@
+<%= form_for [@production, @concert], remote: true do |f| %>
+	<%= render 'shared/error_messages', target: @concert %>
+	<%= f.text_field :name %>
+	<%= f.submit "Create Concert" %>
+<% end %>

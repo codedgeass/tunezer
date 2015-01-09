@@ -1,0 +1,6 @@
+<%= form_tag productions_path, method: :get, class: 'typewatch_search' do %>
+	Find a Production or Concert: <%= text_field_tag 'index_search' %>
+	<%= hidden_field_tag 'category', @category %>
+  <%= hidden_field_tag 'klass', @klass %>
+  <%= hidden_field_tag 'genre', @genre %>
+<% end %>

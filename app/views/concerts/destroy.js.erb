@@ -1,0 +1,5 @@
+$('#scores').html(
+  '<%= escape_javascript render partial: 'shared/display_scores', locals: { display: @production } %>');
+$('#show_rankings').html('<%= escape_javascript render partial: 'index' %>');
+$('#voting').empty()
+$('#create_concert_or_video').html('<p> Successfully deleted <%= @concert.name %> </p>');

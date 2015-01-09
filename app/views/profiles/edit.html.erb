@@ -1,0 +1,26 @@
+<h1>Editing profile</h1>
+
+<%= form_for(@profile) do |f| %>
+  <%= render 'shared/error_messages', target: @profile %>
+  <div class="field">
+    <%= f.label :real_name %> <br>
+    <%= f.text_field :real_name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %> <br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :hometown %> <br>
+    <%= f.text_field :hometown %>
+  </div>
+  <div class="field">
+    <%= f.label :favorite_artists %> <br>
+    <%= f.text_field :favorite_artists %>
+  </div>
+  <div class="field">
+    <%= f.label :favorite_songs %> <br>
+    <%= f.text_field :favorite_songs %>
+  </div>
+  <div class="actions"> <%= f.submit %> </div>
+<% end %>

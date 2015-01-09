@@ -1,0 +1,86 @@
+<ul class='horizontal'>
+	<li> 
+    <%= link_to productions_path(genre: 'All', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %>
+      <%= image_tag('all.gif') %>
+      All
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Blues', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %> 
+      <%= image_tag('blues.jpg') %>
+      Blues
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Classical', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %>
+      <%= image_tag('classical.gif') %>
+      Classical
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Country', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %> 
+      <%= image_tag('country.jpg') %>
+      Country
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Electronic', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %>
+      <%= image_tag('electronic.jpg') %>
+      Electronic
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Ethnic', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %> 
+      <%= image_tag('ethnic.jpg') %>
+      Ethnic
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Hip Hop', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %> 
+      <%= image_tag('hiphop.jpg') %>
+      Hip Hop
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Jazz', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %>
+      <%= image_tag('jazz.jpg') %>
+      Jazz
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Pop', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %> 
+      <%= image_tag('pop.jpg') %>
+      Pop
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'R&B', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %> 
+      <%= image_tag('rnb.jpg') %>
+      R&B
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Rock', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %> 
+      <%= image_tag('rock.jpg') %>
+      Rock
+    <% end %>
+  </li>
+	<li> 
+    <%= link_to productions_path(genre: 'Other', category: @category, klass: @klass), 
+          class: 'image_link', remote: true do %> 
+      <%= image_tag('other.jpg') %>
+      Other
+    <% end %>
+  </li>
+</ul>

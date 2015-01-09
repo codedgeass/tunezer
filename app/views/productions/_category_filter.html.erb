@@ -1,0 +1,24 @@
+<p>
+  <% if @category == 'Festival' %>
+    <%= link_to 'All', productions_path(category: 'All', klass: @klass), remote: true %>
+    <%= link_to 'Artists', productions_path(category: 'Artist', klass: @klass), remote: true %>
+    Festivals
+  <% elsif @category == 'Artist' %>
+    <%= link_to 'All', productions_path(category: 'All', klass: @klass), remote: true %>
+    Artists
+    <%= link_to 'Festivals', productions_path(category: 'Festival', klass: @klass), remote: true %>
+  <% else %>
+    All
+    <%= link_to 'Artists', productions_path(category: 'Artist', klass: @klass), remote: true %>
+    <%= link_to 'Festivals', productions_path(category: 'Festival', klass: @klass), remote: true %>
+  <% end %>
+</p>
+<p>
+  <% if @klass == 'Production' %>
+    Productions
+    <%= link_to 'Concerts', productions_path(klass: 'Concert', category: @category), remote: true %>
+  <% else # @klass == 'Concert' %>
+    <%= link_to 'Productions', productions_path(klass: 'Production', category: @category), remote: true %>
+    Concerts
+  <% end %>
+</p>

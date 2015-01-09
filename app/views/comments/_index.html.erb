@@ -1,0 +1,19 @@
+<ul class="comments">
+	<% @comments.each do |comment| %>
+		<%= raw comment.content %>
+		<br>
+		<p class="no_top_margin"> 
+			<%= link_to "#{comment.username}", profile_path(comment.username), class: 'minimize_text' %>
+			<span class="minimize_text add_left_margin"> <%= format_time(comment.created_at) %> </span>
+      <%= link_to 'Delete', production_comment_path(comment.production_id, comment.id), 
+            method: :delete, remote: true, class: 'minimize_text' %>
+		</p>
+	<% end %>
+</ul>
+<div class="pagination">
+	<%= will_paginate @comments, param_name: 'comments_page', container: false, 
+        params: { controller: 'comments', action: 'index', production_id: @production.id } %>
+  <div class="pagination_info">
+    (<%= @comments.total_entries %> <%= 'Comment'.pluralize(@comments.total_entries) %>)
+  </div>
+</div>

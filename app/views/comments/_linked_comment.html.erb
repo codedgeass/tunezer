@@ -1,0 +1,13 @@
+<% if @linked_comment %> 
+	<h3> Linked Comment </h3>
+	<ul class="comments">
+		<%= raw @linked_comment.content %>
+		<br>
+		<p class="no_top_margin"> 
+			<span class="minimize_text"> 
+        <%= link_to "#{@linked_comment.username}", profile_path(@linked_comment.username) %>
+      </span>
+			<span class="minimize_text add_left_margin"> <%= format_time(@linked_comment.created_at) %> </span>
+		</p>
+	</ul>
+<% end %>

@@ -1,0 +1,36 @@
+<% if user_signed_in? %>
+	<h3> Your Ratings </h3>
+	<ul>
+		<li class="voting_stars"> 
+			The People 
+      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'people', concert_id: @concert.id } %> 
+		</li>
+		<li class="voting_stars"> 
+			The Music 
+      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'music', concert_id: @concert.id } %> 
+		</li>
+		<br>
+		<li class="voting_stars"> 
+			The Venue 
+      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'venue', concert_id: @concert.id } %> 
+		</li>
+		<li class="voting_stars"> 
+			The Atmosphere 
+      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'atmosphere', concert_id: @concert.id } %> 
+		</li>
+	</ul>
+	<div id="vote_counted">
+		<% if @rating %>
+			<% if @rating.complete? == false %>
+				<p> Your vote won't be counted until you've voted in all categories. </p>
+			<% end %>
+		<% else %>
+			<p> Cast your vote! </p>
+		<% end %>
+	</div>
+<% else %>
+	<p> 
+    To vote for a production, <%= link_to 'Sign In', new_user_session_path %>, or 
+	  <%= link_to 'Sign Up', new_user_registration_path %> if you haven't already. 
+  </p>
+<% end %>
