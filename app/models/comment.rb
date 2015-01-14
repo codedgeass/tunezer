@@ -25,7 +25,7 @@ class Comment < ActiveRecord::Base
           content_with_links << "<a data-remote='true' 
             href=/productions/#{self.production_id}/videos/#{video_number}> #{word.delete('`')} </a> "
         else
-          content_with_links << word
+          content_with_links << word << ' '
         end
       else
         content_with_links << word << ' '
