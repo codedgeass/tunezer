@@ -45,7 +45,7 @@ class Comment < ActiveRecord::Base
   end
   
   def video_exists?(id)
-    if Video.find(id)
+    if Video.find_by(id: id)
       true
     else
       false
