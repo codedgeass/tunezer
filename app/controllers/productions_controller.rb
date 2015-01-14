@@ -58,7 +58,7 @@ class ProductionsController < ApplicationController
     #   from the show action in the concerts controller when Javascript is disabled.
     if params[:concert_id].present? 
       @concert = Concert.find(params[:concert_id])
-      @rating = current_user.ratings.find_by(concert_id: params[:concert_id]) || Rating.new
+      @rating = current_user.ratings.find_by(concert_id: params[:concert_id]) || Rating.new if user_signed_in?
     end
   end
   
@@ -81,7 +81,7 @@ class ProductionsController < ApplicationController
   # These methods filter results in the index action. TODO: Move the methods to their own model.
   
   def find_productions_or_concerts
-    @klass.constantize.where(conditions).best_rank.page(params[:productions_or_concerts_page])
+    @klass.constantize.where(conditions).best_rank.page(params[:productions_or_concerts_page]).per_page(10)
   end
   
   def genre_conditions
