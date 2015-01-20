@@ -1,7 +1,0 @@
-<h1> Welcome to tuneaddicts </h1>
-
-  The purpose of this website is to create a fun and engaging place for people to explore, share, and vote for live music experiences. The app is in its development phase but there's a stable version uploaded at tuneaddicts.herokuapp.com. Check it out!
-
-  You will be automatically assigned a guest account when visiting the website. This account will be terminated with the current session. The purpose of the guest user is to provide an effort free way for new users to quickly get involved in the comments. A guest user can create comments, but cannot create productions, concerts, videos, or cast votes.
-
-  User registration is implemented using the Devise gem and its email authentication is up and running. Feel free to register and play around with the website!
