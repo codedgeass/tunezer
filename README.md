@@ -33,8 +33,10 @@
 
   Guests can make comments but that's the extent of their writing power over the database. If a guest makes a comment and then logs in during the same session, the registered account will take ownership over the guest comment(s).
   
-  To create a more interactive commenting system, all comments are parsed. The purpose of the parser is to turn words that conform to a special format into engaging links. Two kinds of references are currently supported, username and video. A video reference looks like "`Video_1`". The parser extracts the number, in this case `1`, and searches for a video with that `id` in the database. If the video is found, the word will be turned into a link. For example, "`Video_1`" will be output as [Video_1]. A username reference looks like *@username*. If the username exists, the word will be turned into a link. For example, *@admin* will be output as [@admin]. Punctuation marks can be included with the references. Thus, the following are all valid: *@admin,*, *@admin!*, and *`Video_3`!*. These would be parsed and turned into [@admin], [@admin!] and [Video_3!] respectively.
+  To create a more interactive commenting system, all comments are parsed. The purpose of the parser is to turn words that conform to a special format into engaging links. Two kinds of references are currently supported, username and video. A video reference looks like *\`Video_1\`*. The parser extracts the number, in this case `1`, and searches for a video with that `id` in the database. If the video is found, the word will be turned into a link. For example, *\`Video_1\`* without the quotes will be output as [Video_1][1]. A username reference looks like *@username*. If the username exists, the word will be turned into a link. For example, *@admin* will be output as [@admin][1]. Punctuation marks can be included with the references. Thus, the following are all valid: *@admin,*, *@admin!*, and *\`Video_3\`!*. These would be parsed and turned into [@admin][1], [@admin!][1] and [Video_3!][1] respectively.
 
 ### Notifications
 
   A notification is created when a user references another user in a comment. The notification is displayed at the bottom of the referenced user's profile page.
+  
+[1]: google.com
