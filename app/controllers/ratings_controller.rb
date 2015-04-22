@@ -70,7 +70,8 @@ class RatingsController < ApplicationController
     else
       old_concert_score = @concert[name_of_updated_category]
       @concert.average_in_category(old_rating_score, @rating[name_of_updated_category], name_of_updated_category)
-      @production.average_in_category(old_concert_score, @concert[name_of_updated_category], name_of_updated_category)
+      @production.average_in_category(old_concert_score, 
+        @concert[name_of_updated_category], name_of_updated_category)
     end
   end
 end

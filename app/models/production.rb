@@ -13,8 +13,6 @@ class Production < ActiveRecord::Base
   
   before_destroy :remove_production_from_production_rankings
   
-  self.per_page = 10
-  
   private # ====================================================================================================
   
   # This method is a `before_destroy` callback.

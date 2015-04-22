@@ -26,6 +26,7 @@ textarea {
 }
 
 ul.comments {
-	width: 50em;
+	width: 43em;
 	text-align: left;
+  margin: 0 auto;
 }

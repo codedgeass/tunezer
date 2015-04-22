@@ -1,35 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>tuneaddicts</title>
+  <title>tunezer</title>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if !flash.empty? %>
-	<div id="flash"> 
-		<% flash.keys.each do |k| %> 
-			<div class="<%= k %>">
-				<%= flash[k] %>
-			</div>	
-		<% end %>	
-	</div>
-<% end %>
-<div class="orange_links">
-	<%= link_to 'Home', productions_path %>
-  <% if user_signed_in? %>
-	  <%= link_to "Welcome #{current_or_guest_user.username}", profile_path(current_or_guest_user.profile.id) %>
-  <% else %>
-    Welcome <%= "#{current_or_guest_user.username}" %>
+  <% if !flash.empty? %>
+  	<div id="flash"> 
+  		<% flash.keys.each do |k| %> 
+  			<div class="<%= k %>">
+  				<%= flash[k] %>
+  			</div>	
+  		<% end %>	
+  	</div>
   <% end %>
-	<% if user_signed_in? %>
-		<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-	<% else %>
-		<%= link_to 'Sign In', new_user_session_path %>
-		<%= link_to 'Sign Up', new_user_registration_path %> 
-	<% end %>
-</div>
+  <div class="header">
+    <%= link_to productions_path, class: 'logo' do %>
+      <%= image_tag('logo.png') %>
+    <% end %>
+    <% if user_signed_in? %>
+      <span class="greeting"> 
+        Rock on, <%= link_to "#{current_or_guest_user.username}", profile_path(current_or_guest_user.profile.id) %> 
+      </span>
+    <% end %>
+    <span class="login">
+      <% if user_signed_in? %>
+      	<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'sign_out' %>
+      <% else %>
+        <%= form_for(:user, url: session_path(:user), html: { class: '' }) do |f| %>
+          <table>
+            <tr>
+              <td> <%= f.label :login, 'Username or Email' %> </td>
+              <td> <%= f.label :password %> </td>
+            </tr>
+            <tr>
+              <td> <%= f.text_field :login, autofocus: true, class: 'field' %> </td>
+              <td> <%= f.password_field :password, autocomplete: "off", class: 'field' %> </td>
+              <td>
+                <span class="actions">
+                  <%= f.submit 'Log In' %>
+                </span>
+              </td>
+              <td> 
+                <span class="register_notice"> Or <%= link_to 'Join the Fun!', new_user_registration_path %> </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%# if devise_mapping.rememberable? -%>
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                <%# end -%>
+              </td>
+              <td> <%= link_to 'Forgot your password?', new_password_path(:user) %> </td>
+            </tr>
+          </table>
+        <% end %> 
+      <% end %>
+    </span>
+  </div>
 <%= yield %>
 </body>
 </html>

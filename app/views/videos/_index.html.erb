@@ -2,11 +2,11 @@
   <p> <b> There are no videos to display. Add some! </b> </p>
 <% else %>
   <div>
-    <% video_number = @videos.current_page * 2 - 2 %>
+    <%# video_number = @videos.current_page * 2 - 2 %>
   	<% @videos.each do |video| %>
   		<div class="inline_block">
-        <% video_number += 1 %>
-  			<h3 class="no_top_or_bottom_margins"> #<%= video_number %> </h3>
+        <%# video_number += 1 %>
+  			<h3 class="no_top_or_bottom_margins"> #<%= video_number = @videos.current_page %> </h3>
   			<%= raw youtube_embed(video.url) %>
   			<h3 class="no_top_or_bottom_margins">
           <%= link_to 'Comment on this video', production_video_path(

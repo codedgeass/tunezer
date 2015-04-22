@@ -1,25 +1,36 @@
-<p> <b> Welcome tuneaddict </b> ...introduction to site </p>
-<p>
-  <% if user_signed_in? %>
-    <%= link_to 'Add your favorite live music event!', new_production_path  %>
-  <% else %>
-    <%= link_to 'Sign In', new_user_session_path %> or 
-    <%= link_to 'Sign Up', new_user_registration_path %> to create a new live music event!
-  <% end %>
-</p>
-<p> <b> The best live music as voted by the people. </b> </p>
-<h3> Filter by Category </h3>
-<div id="category_filter">
-	<%= render partial: 'category_filter' %>
+<div class="strike_through">
+  <div class="black_key">
+    <div class="white_on_black">
+      <h1 class="no_top_margin"> The Best Live Music </h1>
+      <h1> We Decide </h1>
+      <p class="no_bottom_margin">
+        <% if user_signed_in? %>
+          <b> <%= link_to 'Add your favorite live music event!', new_production_path  %> </b>
+        <% else %>
+          <b> <%= link_to 'Sign In', new_user_session_path %> </b> or 
+          <b> <%= link_to 'Sign Up', new_user_registration_path %> </b> to create a new live music event!
+        <% end %>
+      </p>
+    </div>
+  </div>
 </div>
-<h3> Filter by Genre </h3>
-<div id="genre_filter">
-	<%= render partial: 'genre_filter' %>
+<div class="filters">
+  <h1> Choose A Category </h1>
+  <div id="category_filter">
+  	<%= render partial: 'category_filter' %>
+  </div>
+  <h1> Discover A Genre </h1>
+  <div id="genre_filter">
+  	<%= render partial: 'genre_filter' %>
+  </div>
+  <div id="index_search_div">
+  	<%= render partial: 'index_search' %>
+  </div>
 </div>
-<br>
-<div id="index_search_div">
-	<%= render partial: 'index_search' %>
-</div>
-<div id="index_rankings">
-	<%= render partial: 'index_rankings' %>
+<div class="strike_through">
+  <div class="black_key">
+    <div class="white_on_black" id="index_rankings">
+    	<%= render partial: 'index_rankings' %>
+    </div>
+  </div>
 </div>

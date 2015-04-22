@@ -49,7 +49,7 @@ class ProductionsController < ApplicationController
     @comment = Comment.new
     # `linked_comment` is passed from a notification in a user's profile page.
     @linked_comment = Comment.find(params[:linked_comment]) if params[:linked_comment]
-    # These four params are passed from a redirection in their controllers that occurs when Javascript is disabled.
+    # The next four params are passed during a redirection that occurs when Javascript is disabled.
     @concerts = @production.concerts.best_rank.page(params[:concerts_page])
     @comments = @production.comments.page(params[:comments_page])
     @new_video = Video.new if params[:new_video?]

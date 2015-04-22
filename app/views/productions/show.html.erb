@@ -1,12 +1,18 @@
-<h1> <%= link_to "#{@production.name}", production_path, remote: true %> </h1>
-<div id="scores">
-  <%# @concert exists at DOM initialization only when the server responds 
-        to requests from the index's concert rankings links. %>
-	<% if @concert %>
-		<%= render partial: 'shared/display_scores', locals: { display: @concert } %>
-	<% else %>
-		<%= render partial: 'shared/display_scores', locals: { display: @production } %>
-	<% end %>
+<div class="strike_through">
+  <div class="black_key">
+    <div class="white_on_black">
+      <h1> <%= link_to "#{@production.name}", production_path, remote: true %> </h1>
+        <div id="scores">
+          <%# @concert exists at DOM initialization only when the server responds 
+                to requests from the index's concert rankings links. %>
+        	<% if @concert %>
+        		<%= render partial: 'shared/display_scores', locals: { display: @concert } %>
+        	<% else %>
+        		<%= render partial: 'shared/display_scores', locals: { display: @production } %>
+        	<% end %>
+        </div>
+      </div>
+  </div>
 </div>
 <div id="voting">
   <%= render partial: 'ratings/voting', locals: { concert_id:  @concert.id } if @concert %>
@@ -14,7 +20,7 @@
 <div id="show_rankings">
 	<%= render partial: 'concerts/index' %>
 </div>
-<p>
+<p> <b>
   <% if user_signed_in? %>
   	<%= link_to 'Add a Concert', new_production_concert_path(@production), remote: true %>
   	<%= link_to 'Add a Video', new_production_video_path(@production), remote: true %>
@@ -22,16 +28,22 @@
       <%= link_to 'Sign In', new_user_session_path %> or <%= link_to 'Sign Up', new_user_registration_path %>
       to create a concert or video for this production!
   <% end %>
-</p>
+</b> </p>
 <div id="create_concert_or_video">
   <%# `@new_video` and `@new_concert` are only used when Javascript is absent. %>
   <%= render partial: 'videos/new' if @new_video %>
   <%= render partial: 'concerts/new' if @new_concert %>
 </div>
-<h2> <%= @production.name %> Videos </h2>
-<div id="show_videos">
-	<%= render partial: 'videos/index' %>
-  <div id="video_not_found"></div>
+<div class="strike_through">
+  <div class="black_key">
+    <div class="white_on_black">
+      <h2> <%= @production.name %> Videos </h2>
+      <div id="show_videos">
+      	<%= render partial: 'videos/index' %>
+        <div id="video_not_found"></div>
+      </div>
+    </div>
+  </div>
 </div>
 <h3 class="no_bottom_margin"> Comments </h3>
 <div id="linked_comment">	

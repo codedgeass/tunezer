@@ -51,7 +51,8 @@ class VideosController < ApplicationController
     end
   rescue ActiveRecord::RecordNotFound
     respond_to do |format|
-      format.html { redirect_to production_path(params[:production_id]), alert: 'That video has been deleted. Sorry!' }
+      format.html { redirect_to production_path(params[:production_id]), 
+        alert: 'That video has been deleted. Sorry!' }
       format.js { render 'alert_video_not_found' }
     end
   end
@@ -60,12 +61,12 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @video.destroy
     @production = Production.find(params[:production_id])
-    calculate_videos_page unless @production.videos.size == 0
+    calculate_video_page unless @production.videos.size == 0
   end
   
   private # ====================================================================================================
   
-  def calculate_videos_page
+  def calculate_video_page
     video_number = params[:video_number].to_i
     videos_page = (video_number / -2) * -1        # Divide by negative to round the quotient up.
     if video_number != 1 && video_number % 2 == 1

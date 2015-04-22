@@ -15,10 +15,11 @@ module Rankable
         end
       elsif direction == 'decreased'
         if initial_position == rankables.size - 1
-          self.rank = rankables.size          # The score was decreased so the rank will fall behind any previous ties.
+          self.rank = rankables.size        # The score was decreased so the rank will fall behind any previous ties.
         else
           ranks_less_than_self = drop_equivalent_ranks_below_self(rankables[(initial_position + 1)..-1])
-          reposition_rankable_with_lower_ranks(ranks_less_than_self, rankables.size) unless ranks_less_than_self == 0
+          reposition_rankable_within_lower_ranks(ranks_less_than_self, rankables.size) unless 
+            ranks_less_than_self == 0
         end
       else
         raise ArgumentError, 'The direction is neither "increased" or "decreased".'
@@ -91,7 +92,7 @@ module Rankable
     return 0
   end
   
-  def reposition_rankable_with_lower_ranks(rankables_less_than_self, initial_size)
+  def reposition_rankable_within_lower_ranks(rankables_less_than_self, initial_size)
     rankables_less_than_self.each_with_index do |rankable, index|
       if self.aggregate_score < rankable.aggregate_score
         rankable.rank -= 1

@@ -5,7 +5,7 @@ class Comment < ActiveRecord::Base
   
   validates :content, presence: true
   
-  self.per_page = 10
+  self.per_page = 5
   
   def parse_symbols
     content_with_links = ''

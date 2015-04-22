@@ -1,5 +1,5 @@
-<h3>
-  <%= %Q(Searched For "#{@index_search}" In ) if @index_search.present? %> 
+<h3 class="no_top_margin">
+  <%= 'Searched' if @index_search.present? %>
   <% if @category == 'All' %>
     <%= @category %> <%= @genre unless @genre == 'All' %> <%= @klass.pluralize %>
   <% else %>
@@ -10,6 +10,7 @@
       <%= @category %> Concerts
     <% end %>
   <% end %>
+  <%= %Q(For "#{@index_search}") if @index_search.present? %>
 </h3>
 <% if @productions_or_concerts.empty? && @klass == 'Production' && 
      @category == 'All' && @genre == 'All' && @index_search.nil? %>
@@ -65,13 +66,11 @@
   		</tr>
   	<% end %>
   </table>
-  <p>
-    <div class="pagination">
-    	<%= will_paginate @productions_or_concerts, container: false, param_name: 'productions_or_concerts_page', 
-            params: { category: @category, klass: @klass, genre: @genre, search: @index_search } %>
-    	<div class="pagination_info">
-        	(<%= pluralize(@productions_or_concerts.total_entries, @klass) %>)
-    	</div>
-    </div>
-  </p>
+  <div class="pagination">
+  	<%= will_paginate @productions_or_concerts, container: false, param_name: 'productions_or_concerts_page', 
+          params: { category: @category, klass: @klass, genre: @genre, search: @index_search } %>
+  	<div class="pagination_info">
+      	(<%= pluralize(@productions_or_concerts.total_entries, @klass) %>)
+  	</div>
+  </div>
 <% end %>
