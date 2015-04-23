@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test 'should not save a user if its username has already been taken' do
-    u = User.new(username: 'admin', email: 'admin2@tuneaddicts.com', password: 'password')
+    u = User.new(username: 'admin', email: 'admin2@tunezer.com', password: 'password')
     assert_not u.save
   end
 end

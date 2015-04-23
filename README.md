@@ -1,6 +1,6 @@
-# Welcome to tuneaddicts
+# Welcome to tunezer
 
-  The purpose of this website is to create a fun and engaging place for people to explore, share, and vote for their favorite or most hated live music experiences. The app is in its development phase but I have [**uploaded**](http://tuneaddicts.herokuapp.com) a stable build to Heroku and populated it with data to highlight the app's purpose and features. Check it out!
+  The purpose of this website is to create a fun and engaging place for people to explore, share, and vote for their most loved, most hated, and most debated live music experiences. [**Check it out!!**](http://tunezer.herokuapp.com). 
   
 ## Features
 
