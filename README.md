@@ -15,15 +15,11 @@
   
 ### Concerts
 
-  Concerts, along with concerts, are at heart of the app. A concert can represent a festival or an artist's live music events. Concerts are composed of concerts. Concerts are the actual events that users will have attended. The scores for a concert are derived by averaging all the scores from its concerts with the total number of votes for that concert. A registered user can cast one vote for each concert. This means they can have multiple votes per concert. Defining and naming what a concert and concert should encompass has proven to be challenging and I'm still working on improving their structure.
-
-### Concerts
-
-  The other half of the app's heart are concerts. Concerts are created through a concert. These concerts then belong to and make up a part of that concert. Registered users can create and cast their votes for concerts. Concerts are the only resource that users can rate. A concert's ratings are derived from the scores users give to its concerts.
+  Concerts are the heart of the app. Concerts are actual live music events that users will have attended. The scores for a concert are derived by averaging all the ratings users have cast with the total number of votes for that concert. A registered user can cast one vote for each concert.
 
 ### Ratings
 
-  Registered users can rate concerts. After a user casts their first vote for a concert, a rating for that concert will be created and associated with that user. There are four rating categories to vote for. "The People": how fun are your fellow concert goers? "The Music": is the music consistent with the quality you expected? "The Venue": does the venue enhance or diminish your fun? "The Atmosphere": how are the ambience and other intangibles that make up part of the concert experience?
+  Registered users can rate concerts. After a user casts their first vote for a concert, a rating for that concert will be created and associated with that user. The rating will not be counted until the user has voted for all four categories. There are four rating categories to vote for. "The People": how fun are your fellow concert goers? "The Music": is the music consistent with the quality you expected? "The Venue": does the venue enhance or diminish your fun? "The Atmosphere": how are the ambience and other intangibles that make up part of the concert experience?
 
 ### Videos
 
