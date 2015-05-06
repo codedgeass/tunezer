@@ -1,20 +1,14 @@
 <p> <b> Search for an Artist or Festival </b> </p>
-<%= form_tag new_production_path, method: :get, class: 'typewatch_search' do %>
-    Find a Production: <%= text_field_tag 'new_search' %>
+<%= form_tag new_concert_path, method: :get, class: 'typewatch_search' do %>
+    Find a Concert: <%= text_field_tag 'new_search' %>
 <% end %>
 <div id="new_rankings"></div>
 <p> <b> Or create a new one </b> </p>
-<%= form_for @production do |f| %>
-	<%= render 'shared/error_messages', target: @production %>
+<%= form_for @concert do |f| %>
+	<%= render 'shared/error_messages', target: @concert %>
 	<div class="field">
     <%= f.label(:name, "Name:") %>
 	  <%= f.text_field :name %> 
-  </div>
-	<div class="field"> 
-    <%= f.radio_button(:category, 'Artist') %>
-	  <%= f.label(:category_artist, 'Artist') %>
-	  <%= f.radio_button(:category, 'Festival') %>
-	  <%= f.label(:category_festival, 'Festival') %> 
   </div>
 	<% genres = 
        ['Blues', 'Country', 'Classical', 'Electronic', 'Ethnic', 'Hip Hop', 'Jazz', 'Pop', 'R&B', 'Rock', 'Other'] %>

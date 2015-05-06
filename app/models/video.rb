@@ -1,12 +1,12 @@
 class Video < ActiveRecord::Base
-  belongs_to :production
+  belongs_to :concert
 
   validates :url, uniqueness: { message: 'already exists' }, format:
     { with: /((http|https):\/\/)?(www\.)?(youtube\.com)(\/)?([a-zA-Z0-9\-\.]+)\/?/, message: 'has an invalid format' }
     
   before_validation :truncate_url
   
-  self.per_page = 1
+  self.per_page = 2
   
   private # ====================================================================================================
   

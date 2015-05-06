@@ -10,12 +10,6 @@ p.no_top_margin {
 	margin-top: 0;
 }
 
-span.add_left_margin {
-	margin-top: 0;
-	margin-bottom: 0;
-	margin-right: 0;
-	margin-left: 10px;
-}
 span.minimize_text {
 	font-size: 0.85em;
 }
@@ -25,8 +19,32 @@ textarea {
 	width: 600px;
 }
 
-ul.comments {
-	width: 43em;
-	text-align: left;
+
+.add_left_margin {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.comment_content {
+  margin-top: 5px;
+}
+
+.comment_entries {
   margin: 0 auto;
+	text-align: left;
+  width: 43em;
+}
+  .comment_entries a {
+    text-decoration: none;
+  }
+
+.comment_footer {
+  margin-top: 5px;
+}
+
+.comment_header {
+  margin-top: 30px;
+  margin-bottom: 5px;
 }

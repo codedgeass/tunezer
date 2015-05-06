@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  belongs_to :production
+  belongs_to :concert
   belongs_to :user
   has_many :notifications, dependent: :delete_all
   
@@ -23,7 +23,7 @@ class Comment < ActiveRecord::Base
         video_number = word.tr('`,.?!', '')[6..-1]
         if video_exists?(video_number)
           content_with_links << "<a data-remote='true' 
-            href=/productions/#{self.production_id}/videos/#{video_number}> #{word.delete('`')} </a> "
+            href=/concerts/#{self.concert_id}/videos/#{video_number}> #{word.delete('`')} </a> "
         else
           content_with_links << word << ' '
         end

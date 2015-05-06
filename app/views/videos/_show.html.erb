@@ -3,9 +3,9 @@
 		<h3 class="no_top_or_bottom_margins"> <%= 'Linked Video' %> </h3>
 		<%= raw youtube_embed(@video.url) %>
 		<h3 class="no_top_or_bottom_margins"> 
-			<%= link_to 'Comment on this video', production_video_path(production_id: @video.production_id, 
+			<%= link_to 'Comment on this video', concert_video_path(concert_id: @video.concert_id, 
             id: @video.id, reference_video: true), remote: true %>
-			<%= link_to 'Back to Videos', production_videos_path(@video.production_id, videos_page: 1), remote: true %>
+			<%= link_to 'Back to Videos', concert_videos_path(@video.concert_id, videos_page: 1), remote: true %>
 		</h3>
 	</div>
 </div>

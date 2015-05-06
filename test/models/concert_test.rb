@@ -3,13 +3,13 @@ require 'test_helper'
 class ConcertTest < ActiveSupport::TestCase
   def setup
     @concerts_size_two = [
-      Concert.new(aggregate_score: 5, name: 'Foo1', genre: 'Foo1', category: 'Foo1', rank: 1),
-      Concert.new(aggregate_score: 3, name: 'Foo2', genre: 'Foo2', category: 'Foo2', rank: 2)
+      Concert.new(aggregate_score: 5, name: 'Foo1', genre: 'Foo1', rank: 1),
+      Concert.new(aggregate_score: 3, name: 'Foo2', genre: 'Foo2', rank: 2)
     ]
     @concerts_size_three = [
-      Concert.new(aggregate_score: 7, name: 'Foo1', genre: 'Foo1', category: 'Foo1', rank: 1),
-      Concert.new(aggregate_score: 5, name: 'Foo2', genre: 'Foo2', category: 'Foo2', rank: 2),
-      Concert.new(aggregate_score: 3, name: 'Foo3', genre: 'Foo3', category: 'Foo3', rank: 3)
+      Concert.new(aggregate_score: 7, name: 'Foo1', genre: 'Foo1', rank: 1),
+      Concert.new(aggregate_score: 5, name: 'Foo2', genre: 'Foo2', rank: 2),
+      Concert.new(aggregate_score: 3, name: 'Foo3', genre: 'Foo3', rank: 3)
     ]
   end
   
@@ -18,51 +18,32 @@ class ConcertTest < ActiveSupport::TestCase
     assert_not concert.save
   end
   
-  test 'should not save a concert if its name is not unique to its production' do
-    production = productions(:ultra)
-    concert = production.concerts.build(name: '2014')
+  test 'should only save concerts with unique names' do
+    concert = Concert.new(name: 'Ultra Music Festival')
     assert_not concert.save
   end
   
   test 'average_in_category' do
-    concert = concerts(:swift_2012)
-    concert.average_in_category(5, 6, :people)
-    assert_equal 5.5, concert.people
+    concert = concerts(:swift)
+    concert.average_in_category(5, 7, :people)
+    assert_equal 6, concert.people
   end
   
-  # These tests test `before_destroy` callbacks.
+  # `before_destroy` callback
   
   test 'remove_concert_from_concert_rankings' do
-    concert = concerts(:ultra_2013)
+    concert = concerts(:swift)
     concert.send(:remove_concert_from_concert_rankings)
-    assert_equal 2, concerts(:ultra_2012).rank
-  end
-  
-  test 'remove_concert_from_concert_rankings with three concerts in a tie' do
-    concert = concerts(:ties_2014)
-    concert.send(:remove_concert_from_concert_rankings)
-    assert_equal 1, concerts(:ties_2013).rank
-    assert_equal 1, concerts(:ties_2012).rank
-  end
-  
-  test 'remove_concert_from_production_score' do
-    concert = concerts(:edc_2014)
-    concert.send(:remove_concert_from_production_score)
-    assert_equal 3, productions(:edc).aggregate_score
-    assert_equal 2, productions(:ultra).rank
-  end
-  
-  test 'remove_concert_from_production_score remove all concerts' do
-    productions(:swift).concerts.destroy_all
-    assert_nil productions(:swift, true).rank
+    assert_equal 1, concerts(:edc).rank
+    assert_equal 2, concerts(:ultra).rank
   end
   
   # The remaining tests all test the method `update_rankings`.
   
   test 'update_rankings when size is one' do
-    concerts = [Concert.new(aggregate_score: 5, name: 'Foo', genre: 'Foo', category: 'Foo', rank: 1)]
+    concerts = [Concert.new(aggregate_score: 5, name: 'Foo', genre: 'Foo', rank: 1)]
+    concerts[0].aggregate_score = 7
     updated_concert = concerts[0]
-    updated_concert.aggregate_score = 7
     updated_concert.update_rankings(concerts, 'increased')
     assert_equal 1, updated_concert.rank
   end

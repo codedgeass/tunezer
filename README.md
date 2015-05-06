@@ -6,20 +6,20 @@
 
 ### Guest User Accounts
 
-  You will automatically be assigned a guest account when visiting the website. This account will be terminated with the current session. The purpose of the guest account is to provide an easy way for new users to quickly get involved in the comments. A guest user can create comments, but cannot create productions, concerts, videos, or ratings.
+  You will automatically be assigned a guest account when visiting the website. This account will be terminated with the current session. The purpose of the guest account is to provide an easy way for new users to quickly get involved in the comments. A guest user can create comments, but cannot create concerts, concerts, videos, or ratings.
   
 ### User Registration
 
   User registration is implemented using the Devise gem and its email authentication is up and running. Registered users
   are automatically given a unique profile. The profile page is currently fairly basic but I hope to spice it up soon.
   
-### Productions
+### Concerts
 
-  Productions, along with concerts, are at heart of the app. A production can represent a festival or an artist's live music events. Productions are composed of concerts. Concerts are the actual events that users will have attended. The scores for a production are derived by averaging all the scores from its concerts with the total number of votes for that production. A registered user can cast one vote for each concert. This means they can have multiple votes per production. Defining and naming what a production and concert should encompass has proven to be challenging and I'm still working on improving their structure.
+  Concerts, along with concerts, are at heart of the app. A concert can represent a festival or an artist's live music events. Concerts are composed of concerts. Concerts are the actual events that users will have attended. The scores for a concert are derived by averaging all the scores from its concerts with the total number of votes for that concert. A registered user can cast one vote for each concert. This means they can have multiple votes per concert. Defining and naming what a concert and concert should encompass has proven to be challenging and I'm still working on improving their structure.
 
 ### Concerts
 
-  The other half of the app's heart are concerts. Concerts are created through a production. These concerts then belong to and make up a part of that production. Registered users can create and cast their votes for concerts. Concerts are the only resource that users can rate. A production's ratings are derived from the scores users give to its concerts.
+  The other half of the app's heart are concerts. Concerts are created through a concert. These concerts then belong to and make up a part of that concert. Registered users can create and cast their votes for concerts. Concerts are the only resource that users can rate. A concert's ratings are derived from the scores users give to its concerts.
 
 ### Ratings
 
@@ -27,7 +27,7 @@
 
 ### Videos
 
-  Registered users can submit URLs to Youtube videos from a production's page. The video(s) will then be embedded onto the production's page. More video hosting providers will be supported soon.
+  Registered users can submit URLs to Youtube videos from a concert's page. The video(s) will then be embedded onto the concert's page. More video hosting providers will be supported soon.
 
 ### Comments
 

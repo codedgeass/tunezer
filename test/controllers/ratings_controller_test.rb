@@ -5,8 +5,8 @@ class RatingsControllerTest < ActionController::TestCase
     u = users(:admin)
     u.confirm!
     sign_in u
-    @production = productions(:swift)
-    @rating = ratings(:swift_2012_7)
+    @concert = concerts(:swift)
+    @rating = ratings(:swift_7)
   end
   
   # Test user authentication for this controller.
@@ -26,7 +26,7 @@ class RatingsControllerTest < ActionController::TestCase
   
   test 'create should redirect an HTML request' do
     post :create, { concert_id: @rating.concert_id, rating_people: 7, concerts_page: 1 }
-    assert_redirected_to production_path(id: @production.id, concert_id: @rating.concert_id)
+    assert_redirected_to concert_path(id: @concert.id)
   end
   
   test 'create should set one instance variable when successful' do
@@ -43,7 +43,7 @@ class RatingsControllerTest < ActionController::TestCase
   # Test the `update` action.
   
   test 'update should raise an argument error if the rating remains unchanged' do
-    assert_raises ArgumentError do 
+    assert_raises ArgumentError do
        patch :update, { id: @rating.id, concert_id: @rating.concert_id, rating_atmosphere: 7, format: :js }
     end
   end
@@ -55,21 +55,19 @@ class RatingsControllerTest < ActionController::TestCase
   
   test 'update should redirect an HTML request' do
     patch :update, { id: @rating.id, concert_id: @rating.concert_id, rating_atmosphere: 6 }
-    assert_redirected_to production_path(id: @production.id, concert_id: @rating.concert_id)
+    assert_redirected_to concert_path(id: @concert.id)
   end
   
-  test 'update should set four instance variables when successful' do
+  test 'update should set two instance variables when successful' do
     patch :update, { id: @rating.id, concert_id: @rating.concert_id, rating_atmosphere: 6 }
     assert_not_nil assigns(:rating)
-    assert_not_nil assigns(:production)
     assert_not_nil assigns(:concert)
-    assert_not_nil assigns(:concerts)
   end
   
-  test 'updating a newly completed rating should incporate the rating into a concert and production' do
-    incomplete_rating = ratings(:edc_2014_incomplete)
-    patch :update, { id: incomplete_rating.id, concert_id: incomplete_rating.concert_id, rating_atmosphere: 3 }
-    assert_equal 2, concerts(:edc_2014).number_of_votes
-    assert_equal 4, productions(:edc).number_of_votes
+  test 'updating a newly completed rating should incorporate the rating into a concert' do
+    incomplete_rating = ratings(:edc_incomplete)
+    patch :update, { id: incomplete_rating.id, concert_id: incomplete_rating.concert_id, rating_atmosphere: 5 }
+    assert_equal 2, concerts(:edc).number_of_votes
+    assert_equal 4.5, concerts(:edc).aggregate_score
   end
 end

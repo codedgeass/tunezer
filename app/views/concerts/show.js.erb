@@ -1,4 +1,0 @@
-$('#voting').html('<%= escape_javascript render partial: 'ratings/voting', locals: { concert_id:  @concert.id } %>');
-$('#scores').html(
-  '<%= escape_javascript render partial: 'shared/display_scores', locals: { display: @concert } %>');
-$.renderOldVotes();

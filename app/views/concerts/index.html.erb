@@ -1,0 +1,24 @@
+<div class="intro box">
+  <h1> The Best Live Music? </h1>
+  <h1> We Decide. </h1>
+</div>
+<p class="no_bottom_margin">
+  <% if user_signed_in? %>
+    <b> <%= link_to 'Add your favorite live music event!', new_concert_path  %> </b>
+  <% else %>
+    <b> <%= link_to 'Sign In', new_user_session_path %> </b> or 
+    <b> <%= link_to 'Sign Up', new_user_registration_path %> </b> to create a new live music event!
+  <% end %>
+</p>
+<div class="filters box">
+  <h1> Discover A Genre </h1>
+  <div id="genre_filter">
+  	<%= render partial: 'genre_filter' %>
+  </div>
+  <div id="index_search_div">
+  	<%= render partial: 'index_search' %>
+  </div>
+</div>
+<div id="index_rankings" class="box">
+  <%= render partial: 'index_rankings' %>
+</div>

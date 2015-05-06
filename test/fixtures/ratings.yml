@@ -1,27 +1,55 @@
-# Ratings for the concert "swift_2014".
+# Ratings for the concert "Taylor Swift".
 
-swift_2012_7:
+swift_7:
   people: 7
   music: 7
   venue: 7
   atmosphere: 7
-  concert: swift_2012
+  concert: swift
   user: admin
   
-swift_2012_3:
+swift_3:
   people: 3
   music: 3
   venue: 3
   atmosphere: 3
-  concert: swift_2012
+  concert: swift
   user: johan
 
-# Ratings for the concert "swift_2014".
+# Ratings for the concert "Electric Daisy Carnival".
 
-edc_2014_incomplete:
+edc_4:
+  people: 4
+  music: 4
+  venue: 4
+  atmosphere: 4
+  concert: edc
+  user: johan
+
+edc_incomplete:
   people: 5
   music: 5
   venue: 5
   atmosphere:
-  concert: edc_2014
+  concert: edc
+  user: admin
+  
+# Ratings for the concert "Ultra Music Festival".
+
+ultra_4:
+  people: 3
+  music: 3
+  venue: 3
+  atmosphere: 3
+  concert: ultra
+  user: admin
+  
+# Ratings for the concert "Ties".
+
+ties_2:
+  people: 2
+  music: 2
+  venue: 2
+  atmosphere: 2
+  concert: ties
   user: admin

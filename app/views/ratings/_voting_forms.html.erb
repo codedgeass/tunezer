@@ -40,5 +40,4 @@
         get_category_score(class_name, concert_id) == 10, class: 'rating_button' %>
         
 	<%= hidden_field_tag 'concert_id', concert_id %>
-  <%= hidden_field_tag 'concerts_page', @concerts_page || @concerts.current_page %>
 <% end %>

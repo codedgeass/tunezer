@@ -1,0 +1,5 @@
+<%= form_tag concerts_path, method: :get, class: 'typewatch_search' do %>
+	<h1> Find an Event </h1>
+  <%= text_field_tag 'index_search', nil, placeholder: 'Use me to search!' %>
+  <%= hidden_field_tag 'genre', @genre %>
+<% end %>

@@ -1,6 +1,6 @@
 module NotificationsHelper
-  def get_production_id(notification)
+  def get_concert_id(notification)
     comment = Comment.find(notification.comment_id)
-    comment.production_id
+    comment.concert_id
   end
 end

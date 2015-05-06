@@ -4,7 +4,7 @@
   <% @notifications.each do |n| %>
   	<p> 
       The user, <%= link_to "#{n.referrer_username}", profile_path %>, mentioned you in a 
-      <%= link_to 'comment', production_path(get_production_id(n), linked_comment: n.comment_id) %>.
+      <%= link_to 'comment', concert_path(get_concert_id(n), linked_comment: n.comment_id) %>.
       <%= link_to 'I read it. Delete!', profile_notification_path(n.profile_id, n.id), method: :delete, remote: true %>
   	</p>
   <% end %>

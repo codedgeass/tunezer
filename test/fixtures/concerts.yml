@@ -1,22 +1,7 @@
 # TODO: Provide better comments on where and how each fixture is used. Port the commenting structure to every fixture.
 
-# Data for production "swift"
-
-swift_2014:
-  name: "2014"
-  genre: Country
-  people: 7
-  music: 7
-  venue: 7
-  atmosphere: 7
-  aggregate_score: 7
-  number_of_votes: 1
-  rank: 1
-  category: Artist
-  production: swift
-  
-swift_2012:
-  name: "2012"
+swift:
+  name: Taylor Swift
   genre: Country
   people: 5
   music: 5
@@ -24,53 +9,10 @@ swift_2012:
   atmosphere: 5
   aggregate_score: 5
   number_of_votes: 2
-  rank: 2
-  category: Artist
-  production: swift
-  
-swift_2013:
-  name: "2013"
-  genre: Country
-  people: 3
-  music: 3
-  venue: 3
-  atmosphere: 3
-  aggregate_score: 3
-  number_of_votes: 1
-  rank: 3
-  category: Artist
-  production: swift
-  
-swift_nil:
-  name: "nil"
-  genre: Country
-  people:
-  music:
-  venue:
-  atmosphere:
-  aggregate_score:
-  number_of_votes: 0
-  category: Artist
-  production: swift
-
-
-# Data for production "edc"
-
-edc_2014:
-  name: "2014"
-  genre: Electronic
-  people: 6
-  music: 6
-  venue: 6
-  atmosphere: 6
-  aggregate_score: 6
-  number_of_votes: 1
   rank: 1
-  category: Festival
-  production: edc
-  
-edc_2013:
-  name: "2013"
+
+edc:
+  name: Electric Daisy Carnival
   genre: Electronic
   people: 4
   music: 4
@@ -79,39 +21,9 @@ edc_2013:
   aggregate_score: 4
   number_of_votes: 1
   rank: 2
-  category: Festival
-  production: edc
-  
-edc_2012:
-  name: "2012"
-  genre: Electronic
-  people: 2
-  music: 2
-  venue: 2
-  atmosphere: 2
-  aggregate_score: 2
-  number_of_votes: 1
-  rank: 3
-  category: Festival
-  production: edc
-  
-# Data for production "ultra"
 
-ultra_2012:
-  name: "2012"
-  genre: Electronic
-  people: 1
-  music: 1
-  venue: 1
-  atmosphere: 1
-  aggregate_score: 1
-  number_of_votes: 1
-  rank: 3
-  category: Festival
-  production: ultra
-
-ultra_2013:
-  name: "2013"
+ultra:
+  name: Ultra Music Festival
   genre: Electronic
   people: 3
   music: 3
@@ -119,60 +31,15 @@ ultra_2013:
   atmosphere: 3
   aggregate_score: 3
   number_of_votes: 1
-  rank: 2
-  category: Festival
-  production: ultra
+  rank: 3
   
-ultra_2014:
-  name: "2014"
-  genre: Electronic
-  people: 5
-  music: 5
-  venue: 5
-  atmosphere: 5
-  aggregate_score: 5
-  number_of_votes: 1
-  rank: 1
-  category: Festival
-  production: ultra
-  
-# Data for production "ties"
-
-ties_2014:
-  name: "2014"
-  genre: Electronic
+ties:
+  name: Ties
+  genre: Other
   people: 2
   music: 2
   venue: 2
   atmosphere: 2
   aggregate_score: 2
   number_of_votes: 1
-  rank: 1
-  category: Festival
-  production: ties
-  
-ties_2013:
-  name: "2013"
-  genre: Electronic
-  people: 2
-  music: 2
-  venue: 2
-  atmosphere: 2
-  aggregate_score: 2
-  number_of_votes: 1
-  rank: 1
-  category: Festival
-  production: ties
-  
-ties_2012:
-  name: "2012"
-  genre: Electronic
-  people: 2
-  music: 2
-  venue: 2
-  atmosphere: 2
-  aggregate_score: 2
-  number_of_votes: 1
-  rank: 1
-  category: Festival
-  production: ties
+  rank: 4

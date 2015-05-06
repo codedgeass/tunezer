@@ -1,0 +1,25 @@
+<h3> Search Results </h3>
+<% if @empty_search %>
+	<p> Search for something! </p>
+<% elsif @concerts.empty? %>
+	<p> Your search turned up empty. Time to add your favorite concert to our website! </p>
+<% else %>
+	<table class="center">
+		<tr>
+			<th> Rank </th>
+			<th> Name </th>
+		</tr>
+		<% @concerts.each do |concert| %>
+			<tr>
+				<td> <%= concert.rank.nil? ? 'N/A' : "#{concert.rank}." %> </td>
+				<td> <b> <%= link_to "#{concert.name}", concert_path(concert) %> </b> </td>
+			</tr>
+		<% end %>
+	</table>
+	<div class="pagination">
+		<%= will_paginate @concerts, param_name: 'concerts_page', container: false %>
+		<div class="pagination_info">
+			(<%= @concerts.size %> <%= 'Concert'.pluralize(@concerts.size) %>)
+		</div>
+	</div>
+<% end %>

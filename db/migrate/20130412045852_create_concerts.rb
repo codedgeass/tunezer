@@ -3,7 +3,6 @@ class CreateConcerts < ActiveRecord::Migration
     create_table :concerts do |t|
       t.string :name
       t.string :genre
-      t.string :category
       t.decimal :people
       t.decimal :music
       t.decimal :venue
@@ -11,7 +10,6 @@ class CreateConcerts < ActiveRecord::Migration
       t.decimal :aggregate_score
       t.integer :number_of_votes
       t.integer :rank
-      t.references :production
       
       t.timestamps
     end

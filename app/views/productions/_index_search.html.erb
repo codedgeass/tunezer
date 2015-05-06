@@ -1,7 +1,0 @@
-<%= form_tag productions_path, method: :get, class: 'typewatch_search' do %>
-	<h1> Find an Event </h1>
-  <%= text_field_tag 'index_search', nil, placeholder: 'Use me to search!' %>
-	<%= hidden_field_tag 'category', @category %>
-  <%= hidden_field_tag 'klass', @klass %>
-  <%= hidden_field_tag 'genre', @genre %>
-<% end %>

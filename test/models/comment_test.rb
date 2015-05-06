@@ -14,10 +14,10 @@ class CommentTest < ActiveSupport::TestCase
   end
   
   test 'parse_symbols on the input "`Video_12`!!!"' do
-    production = productions(:swift)
-    comment = Comment.new(production_id: production.id, content: '`Video_12`!!!')
+    concert = concerts(:swift)
+    comment = Comment.new(concert_id: concert.id, content: '`Video_12`!!!')
     comment.parse_symbols
-    assert_equal "<adata-remote='true'href=/productions/#{production.id}/videos/12>Video_12!!!</a>", 
+    assert_equal "<adata-remote='true'href=/concerts/#{concert.id}/videos/12>Video_12!!!</a>", 
       comment.content.gsub(/\s+/, "")
   end
 end
