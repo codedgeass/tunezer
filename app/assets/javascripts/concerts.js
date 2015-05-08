@@ -19,7 +19,7 @@ $(function() {
 
 $(function() {
   typewatchLoad();
-  $('#index_search_div').on('focusin', 'form.typewatch_search', function() {
+  $('#index_search_container').on('focusin', 'form.typewatch_search', function() {
     typewatchLoad();
   });
 });

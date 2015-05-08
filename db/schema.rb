@@ -27,7 +27,9 @@ ActiveRecord::Schema.define(version: 20130412045852) do
 
   create_table "concerts", force: true do |t|
     t.string   "name"
+    t.string   "location"
     t.string   "genre"
+    t.string   "venue_name"
     t.decimal  "people"
     t.decimal  "music"
     t.decimal  "venue"

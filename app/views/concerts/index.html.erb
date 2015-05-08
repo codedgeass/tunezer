@@ -1,6 +1,22 @@
-<div class="intro box">
-  <h1> The Best Live Music? </h1>
-  <h1> We Decide. </h1>
+<div class="intro">
+  <div class="intro_image"></div>
+  <div class="intro_greeting">
+    <h1 class="no_top_margin"> THE BEST LIVE MUSIC? </h1>
+    <h1> WE DECIDE. </h1>
+    <p> Explore, share, and vote for your favorite live music. </p>
+  </div>
+</div>
+<div class="filters">
+  <div id="index_search_container">
+  	<%= render partial: 'index_search' %>
+  </div>
+  <h1> Discover A Genre </h1>
+  <div id="genre_filter">
+  	<%= render partial: 'genre_filter' %>
+  </div>
+</div>
+<div id="index_rankings" class="box">
+  <%= render partial: 'index_rankings' %>
 </div>
 <p class="no_bottom_margin">
   <% if user_signed_in? %>
@@ -10,15 +26,3 @@
     <b> <%= link_to 'Sign Up', new_user_registration_path %> </b> to create a new live music event!
   <% end %>
 </p>
-<div class="filters box">
-  <h1> Discover A Genre </h1>
-  <div id="genre_filter">
-  	<%= render partial: 'genre_filter' %>
-  </div>
-  <div id="index_search_div">
-  	<%= render partial: 'index_search' %>
-  </div>
-</div>
-<div id="index_rankings" class="box">
-  <%= render partial: 'index_rankings' %>
-</div>

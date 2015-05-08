@@ -2,7 +2,9 @@ class CreateConcerts < ActiveRecord::Migration
   def change
     create_table :concerts do |t|
       t.string :name
+      t.string :location
       t.string :genre
+      t.string :venue_name
       t.decimal :people
       t.decimal :music
       t.decimal :venue
