@@ -1,0 +1,376 @@
+/*
+
+
+*/
+a.minimize_text {
+	font-size: 0.85em; 
+}
+
+h3.no_bottom_margin {
+  margin-bottom: 0;
+}
+
+p.no_top_margin {
+	margin-top: 0;
+}
+
+span.minimize_text {
+	font-size: 0.85em;
+}
+
+textarea {
+	height: 80px;
+	width: 600px;
+}
+
+
+.add_left_margin {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.comment_content {
+  margin-top: 5px;
+}
+
+.comment_entries {
+  margin: 0 auto;
+	text-align: left;
+  width: 43em;
+}
+  .comment_entries a {
+    text-decoration: none;
+  }
+
+.comment_footer {
+  margin-top: 5px;
+}
+
+.comment_header {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+a {
+	color: #666666;
+  text-decoration: none;
+}
+  a:hover {
+    color: #09f;
+  }
+
+body {
+  background-color: #eee;
+  color: black;
+	font-family: "Avenir Next", verdana, arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+	text-align: center;
+}
+
+div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; 
+}
+
+table.center {
+	margin: 0 auto;
+}
+
+td, th {
+	text-align: left;
+}
+
+ul { 
+	list-style-type: none;
+  margin-top: 0;
+	padding: 0 0;
+}
+
+
+.action {
+  margin: 10px;
+}
+
+.block {
+  display: block;
+}
+
+.box {
+  background-color: white;
+  border-radius: 5px;
+  width: 980px;
+}
+
+.category {
+  margin: 2px;
+}
+
+.category_group {
+  margin-top: 20px;
+}
+
+.field {
+  margin: 10px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: inline-block;
+}
+
+.float_box {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+
+.genre_box {
+  background-color: white;
+  border-radius: 10px;
+  display: inline-block;
+  height: 80px;
+  margin: 5px 5px;
+  width: 90px;
+}
+
+.greeting {
+  bottom: 0;
+  left: 440px;
+  position: absolute;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  min-height: 80px;
+  overflow: visible;
+  position: relative;
+  width: 980px;
+}
+  .header a {
+    color: #ffbb00;
+  }
+  .header a:hover {
+    background-color: black;
+    color: #0df;
+  }
+
+.header_container {
+  background-color: black;
+}
+
+.header_field {
+  margin-right: 5px;
+  text-align: left;
+}
+
+.image_link img {
+  display: block;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline_block {
+	display: inline-block;
+}
+
+.intro {
+  background-color: black;
+  color: white;
+  height: 350px;
+  padding-top: 10px;
+  position: relative;
+  z-index: 0;
+}
+
+.intro_greeting {
+  left: 20%;
+  position: absolute;
+  text-align: left;
+  top: 25%;
+  z-index: 2;
+}
+
+.intro_image {
+  background-image: url("bg4.jpg");
+  background-position: 60% 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 350px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.login {
+  bottom: 0px;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+}
+  .login .field {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 5px;
+    margin-top: 0;
+  }
+
+.logo {
+  bottom: 15%;
+  float: left;
+  left: 0;
+  position: absolute;
+}
+  .logo:hover {
+    background-color: white;
+  }
+
+.no_bottom_margin {
+  margin-bottom: 0;
+}
+
+.no_top_margin {
+  margin-top: 0;
+}
+
+.no_top_or_bottom_margins {
+  margin: 0 auto;
+}
+
+.orange_link {
+  color: orange;
+}
+
+.pagination {
+  text-align: center;
+  padding: 0.3em;
+  cursor: default;
+  margin-top: .5em;
+}
+  .pagination a, .pagination span, .pagination em {
+    padding: 0.2em 0.5em; 
+  }
+  .pagination .disabled {
+    color: #aaaaaa; 
+  }
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: #ff0084; 
+  }
+  .pagination a {
+    border: 1px solid #dddddd;
+    color: #0063dc;
+  }
+    .pagination a:hover, .pagination a:focus {
+      border-color: #003366;
+      background: #0063dc;
+      color: white; 
+    }
+  .pagination .pagination_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; 
+  }
+  .pagination .previous_page, .pagination .next_page {
+    border-width: 2px; 
+  }
+  .pagination .previous_page {
+    margin-right: 1em; 
+  }
+  .pagination .next_page {
+    margin-left: 1em; 
+  }
+
+.register_notice {
+  margin-left: 5px;
+}
+
+.sign_out {
+  font-size: 14px;
+}
+
+  
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; 
+}
+  #error_explanation h3 {
+  	font-weight: bold;
+  	padding: 5px 5px 5px 15px;
+  	font-size: 12px;
+  	margin: -7px;
+  	margin-bottom: 0px;
+  	background-color: #c00;
+  	color: #fff; 
+  }
+  #error_explanation ul li {
+  	font-size: 12px;
+  	list-style-type: none; 
+  }
+/* 
+*/
+
+/*
+*/
+
+/* line 1, /Users/spetropulos/Documents/tuneaddicts/rails/app/assets/stylesheets/ratings.css.scss */
+form input.rating_button {
+  display: none;
+}
+
+/* line 4, /Users/spetropulos/Documents/tuneaddicts/rails/app/assets/stylesheets/ratings.css.scss */
+form label.rating_button {
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  float: left;
+}
+
+/* line 11, /Users/spetropulos/Documents/tuneaddicts/rails/app/assets/stylesheets/ratings.css.scss */
+form label.rating_button {
+  background-image: url(data:image/gif;base64,R0lGODlhHgAeAMQAAAAAAB8fHyMjIzIyMk1NTVNTUl1dXWNjY2tra3Jycnt7e4SEhIuLi5KSkpubm6Ojo6ysrLKysrq6usPDw8rKytLS0tra2uLi4unp6fT09P39%2FQAAAAAAAAAAAAAAAAAAACH5BAkAABsAIf%2F8SUNDUkdCRzEwMTIAAAUwYXBwbAIgAABtbnRyUkdCIFhZWiAH2QACABkACwAaAAthY3NwQVBQTAAAAABhcHBsAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtkc2NtAAABCAAAAvJkZXNjAAAD%2FAAAAG9nWFlaAAAEbAAAABR3dHB0AAAEgAAAABRyWFlaAAAElAAAABRiWFlaAAAEqAAAABRyVFJDAAAEvAAAAA5jcHJ0AAAEzAAAADhjaGFkAAAFBAAAACxn%2F1RSQwAABLwAAAAOYlRSQwAABLwAAAAObWx1YwAAAAAAAAARAAAADGVuVVMAAAAmAAACfmVzRVMAAAAmAAABgmRhREsAAAAuAAAB6mRlREUAAAAsAAABqGZpRkkAAAAoAAAA3GZyRlUAAAAoAAABKml0SVQAAAAoAAACVm5sTkwAAAAoAAACGG5iTk8AAAAmAAABBHB0QlIAAAAmAAABgnN2U0UAAAAmAAABBGphSlAAAAAaAAABUmtvS1IAAAAWAAACQHpoVFcAAAAWAAABbHpoQ04AAAAWAAAB1HJ1UlUAAAAiAAACpHBsUEwAAAAsAAACxgBZAGwAZQBpAG4AZf8AbgAgAFIARwBCAC0AcAByAG8AZgBpAGkAbABpAEcAZQBuAGUAcgBpAHMAawAgAFIARwBCAC0AcAByAG8AZgBpAGwAUAByAG8AZgBpAGwAIABHAOkAbgDpAHIAaQBxAHUAZQAgAFIAVgBCTgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOuQGnUoACAAUgBHAEIAIIJyX2ljz4%2FwAFAAZQByAGYAaQBsACAAUgBHAEIAIABHAGUAbgDpAHIAaQBjAG8AQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbGZukBoAIABSAEcAQgAgY8%2BP8GX%2Fh072AEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAGIAZQBzAGsAcgBpAHYAZQBsAHMAZQBBAGwAZwBlAG0AZQBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBlAGzHfLwYACAAUgBHAEIAINUEuFzTDMd8AFAAcgBvAGYAaQBsAG8AIABSAEcAQgAgAEcAZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBjACAAUgBHAEIAIABQAHIAbwBmAGkAbABlBB4EMQRJBDgEOQAgBD8EQAQ%2BBEQEOAQ7BEwAIABSAEcAQgBVAG4AaQB3AGUAcgBzAGEAbABuAHkAIABwAHIAbwBm%2FwBpAGwAIABSAEcAQgAAZGVzYwAAAAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAAAAAAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABadQAArHMAABc0WFlaIAAAAAAAAPNSAAEAAAABFs9YWVogAAAAAAAAdE0AAD3uAAAD0FhZWiAAAAAAAAAoGgAAFZ8AALg2Y3VydgAAAAAAAAABAc0AAHRleHQAAAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUgSW5jLkMsIGFsbCByaWdodHMgcmVzZXJ2ZWQuAHNmMzIAAAAAAAEMQgAABd7%2F%2F%2FMmAAAHkgAA%2FZH%2F%2F%2Fui%2F%2F%2F9owAAA9wAAMBsACwAAAAAHgAeAAAF3KAmjiSZZWWqriIlsTDbJHFdIgRq11XDULuaYzJpBGMJDIZ2XFmYiUtT9XCIHpFpKlERVRZaEsYwyiR0MAn2wW5DEMZRQwFptyNYlKUgkEggEYGBGCQXgoEQfgEDXSMPDGEMVikRBUBBFARZKxcGk0IHUjELCIQsGAiQOxEEFisVBhNNdCtVTRmhnApNFUwrUUcODyR%2FJA6bOwiuInMJYC27OxcIIqiTDrm4pjV1GhMFsiPfQAwvNgwVELklGAcRE88xGQYHcSsOOGgsEwDhMPyXYERYVsOCuTA7QgAAOw%3D%3D);
+}
+
+/* line 14, /Users/spetropulos/Documents/tuneaddicts/rails/app/assets/stylesheets/ratings.css.scss */
+form label.rating_button.checked, form label.rating_button.glow {
+  background-image: url(data:image/gif;base64,R0lGODlhHgAeAPcAALq8u8S%2BqsXFvcbDtce8o8jCrMjFssnMzM3Ck83R0s%2B4hs%2FRz9DGodDT1tG5gtHT2dK3e9PY49TSzNW2dNXIodXMtdfDetrKjdrd49vAf9%2FJm9%2FMeuDLduLk6eOvVOOyUuS5S%2Ba2Que2SefMeurfyOvarOvbpOvn1uvs6%2By3MuzSpezWk%2Bzau%2Bzmzuzo2%2Bzp1O3UZe3hse3lwu7gn%2B7hoe7u8O7w7u7w8u%2FKgO%2FVmu%2FluvDEavDKavDikfHgoPPJY%2FPddvP09PP1%2BfTAZvWtHPXbWPbcg%2Fbvyfb6%2FvfdVfjuyPjwyPj39vnbdfnuxvnwxfuyCfu9Tfzaaf28Dv3NNv3TW%2F3Vav3bW%2F3kaP334P366P378v39%2Ff6qAP60AP62IP68AP7CAP7MW%2F7ZLf7cRP%2BMAP%2BSAP%2BcAP%2BjAP%2BkCf%2B1Kv%2B5H%2F%2B7L%2F%2B7M%2F%2B7Ov%2B9Ff%2B9Qv%2B9YP%2FANP%2FCTP%2FCXP%2FCY%2F%2FDVP%2FHbv%2FIVP%2FIZv%2FIaf%2FJJf%2FLLP%2FMAP%2FMPf%2FSRP%2FSVP%2FSZf%2FTTP%2FVAP%2FVKv%2FXIf%2FYGf%2FYIP%2FYO%2F%2FaAP%2FaNP%2FcTP%2FcVP%2FhAP%2FiNP%2FjLP%2FjW%2F%2FkGf%2FkPP%2FkQf%2FkVP%2FlTP%2FpW%2F%2FpaQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAAJgAIf%2F8SUNDUkdCRzEwMTIAAAUwYXBwbAIgAABtbnRyUkdCIFhZWiAH2QACABkACwAaAAthY3NwQVBQTAAAAABhcHBsAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtkc2NtAAABCAAAAvJkZXNjAAAD%2FAAAAG9nWFlaAAAEbAAAABR3dHB0AAAEgAAAABRyWFlaAAAElAAAABRiWFlaAAAEqAAAABRyVFJDAAAEvAAAAA5jcHJ0AAAEzAAAADhjaGFkAAAFBAAAACxn%2F1RSQwAABLwAAAAOYlRSQwAABLwAAAAObWx1YwAAAAAAAAARAAAADGVuVVMAAAAmAAACfmVzRVMAAAAmAAABgmRhREsAAAAuAAAB6mRlREUAAAAsAAABqGZpRkkAAAAoAAAA3GZyRlUAAAAoAAABKml0SVQAAAAoAAACVm5sTkwAAAAoAAACGG5iTk8AAAAmAAABBHB0QlIAAAAmAAABgnN2U0UAAAAmAAABBGphSlAAAAAaAAABUmtvS1IAAAAWAAACQHpoVFcAAAAWAAABbHpoQ04AAAAWAAAB1HJ1UlUAAAAiAAACpHBsUEwAAAAsAAACxgBZAGwAZQBpAG4AZf8AbgAgAFIARwBCAC0AcAByAG8AZgBpAGkAbABpAEcAZQBuAGUAcgBpAHMAawAgAFIARwBCAC0AcAByAG8AZgBpAGwAUAByAG8AZgBpAGwAIABHAOkAbgDpAHIAaQBxAHUAZQAgAFIAVgBCTgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOuQGnUoACAAUgBHAEIAIIJyX2ljz4%2FwAFAAZQByAGYAaQBsACAAUgBHAEIAIABHAGUAbgDpAHIAaQBjAG8AQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbGZukBoAIABSAEcAQgAgY8%2BP8GX%2Fh072AEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAGIAZQBzAGsAcgBpAHYAZQBsAHMAZQBBAGwAZwBlAG0AZQBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBlAGzHfLwYACAAUgBHAEIAINUEuFzTDMd8AFAAcgBvAGYAaQBsAG8AIABSAEcAQgAgAEcAZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBjACAAUgBHAEIAIABQAHIAbwBmAGkAbABlBB4EMQRJBDgEOQAgBD8EQAQ%2BBEQEOAQ7BEwAIABSAEcAQgBVAG4AaQB3AGUAcgBzAGEAbABuAHkAIABwAHIAbwBm%2FwBpAGwAIABSAEcAQgAAZGVzYwAAAAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAAAAAAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABadQAArHMAABc0WFlaIAAAAAAAAPNSAAEAAAABFs9YWVogAAAAAAAAdE0AAD3uAAAD0FhZWiAAAAAAAAAoGgAAFZ8AALg2Y3VydgAAAAAAAAABAc0AAHRleHQAAAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUgSW5jLkMsIGFsbCByaWdodHMgcmVzZXJ2ZWQuAHNmMzIAAAAAAAEMQgAABd7%2F%2F%2FMmAAAHkgAA%2FZH%2F%2F%2Fui%2F%2F%2F9owAAA9wAAMBsACwAAAAAHgAeAAAI%2FwC5CBxIsKDBgwgRbsmSsGFCJ1iCOJw4UIiRRC8oUnRBZVAPjRNjhBlEBgXIhEGkgDGUSMdJhC32QDnUCIjElwSR%2BACjplCkMSdwEkRRZU2bMY4azRA6UAYfN24USXp0xWTCLU%2BcLMnqpKsSGU3kwIGDSNIkRzSOPFm7VomSJ1qCrED05w%2BZu3jJzIkyZ1GlSoLqCq5LxlGRjBgoiMGDBxAjRpQiM7JjBzIgypQbQ660QYIQgRgM8MAThw6dKlcgWbpC50oVOmLEXEmtOgmCBzcFdhAwQkyd33XyBJJipbgULFguKbcEowCGgzUOXAik586dOnTs%2BGnDhg%2BhMWMUKd%2FiIMDqwSAPGFix4%2BZNmDBnvJwpc6bLewcNcieMkAGM%2FzBolAFGGGaUUUYXFkTABEU37PBfF2WYAUYfXphhxhk83KCRC1MMWGGBXrwHoYQZUcRCiGBYGKF%2FA86HhgkUIYGDF2CgYeEZUKTwHxgR%2FvCZQzZE4UUXF3YhQgAATPCfF2V8UWJDJAx5BhpdOLAACkFgQEAIA6ZxRgkTqdAFlR8YgEFuKBwAgX9n7KCfQUEM0QURCiSgYUFZBgCCF1O40JALXngwQAcNpekAGDk01IIGDdzpEAYVgNmQoxQJ8WZAADs%3D);
+}
+
+/* line 17, /Users/spetropulos/Documents/tuneaddicts/rails/app/assets/stylesheets/ratings.css.scss */
+form label.rating_button span {
+  display: none;
+}
+
+/* line 21, /Users/spetropulos/Documents/tuneaddicts/rails/app/assets/stylesheets/ratings.css.scss */
+li.voting_stars {
+  display: inline-block;
+  margin: 5px 10px;
+}
+h3.no_top_or_bottom_margins {
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
