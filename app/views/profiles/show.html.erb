@@ -4,7 +4,7 @@
 <p> <b> Favorite artists: </b> <%= @profile.favorite_artists %> </p>
 <p> <b> Favorite songs: </b> <%= @profile.favorite_songs %> </p>
 
-<% if current_or_guest_user.id == @profile.user_id %>
+<% if current_user.id == @profile.user_id %>
 	<%= link_to 'Edit Profile', edit_profile_path(@profile.id) %>
 	<h3> Notifications </h3>
   <div id="notifications">

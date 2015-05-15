@@ -1,2 +1,2 @@
-$('#comments').html('<%= escape_javascript render partial: 'index' %>');
-$('#comment_form').html('<%= escape_javascript render partial: 'comment_form' %>');
+$('.comments').html('<%= escape_javascript render partial: 'index', locals: { commentable: @commentable } %>');
+$('#comment_content').val('');

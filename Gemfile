@@ -11,6 +11,7 @@ gem 'sanitize'
 gem 'thin'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'rails_12factor', group: :concert # Required by Heroku.
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

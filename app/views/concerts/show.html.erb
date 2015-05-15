@@ -24,11 +24,16 @@
 </div>
 <h3 class="no_bottom_margin"> Comments </h3>
 <div id="linked_comment">	
-	<%= render partial: 'comments/linked_comment'%>
+	<%= render partial: 'comments/linked_comment' %>
 </div>
-<div id="comment_form">
-	<%= render partial: 'comments/comment_form'%>
+<div class="comment_form">
+  <% if user_signed_in? %>
+	  <%= render partial: 'comments/comment_form', locals: { commentable: @concert } %>
+  <% else %>
+      <b> <%= link_to 'Sign In', new_user_session_path %> or <%= link_to 'Sign Up', new_user_registration_path %>
+      to post a comment! </b>
+  <% end %>
 </div>
-<div id="comments">	
-	<%= render partial: 'comments/index' %>
+<div class="comments">	
+	<%= render partial: 'comments/index', locals: { commentable: @concert }  %>
 </div>

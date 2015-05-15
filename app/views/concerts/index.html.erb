@@ -6,23 +6,40 @@
     <p> Explore, share, and vote for your favorite live music. </p>
   </div>
 </div>
-<div class="filters">
-  <div id="index_search_container">
-  	<%= render partial: 'index_search' %>
+<div class="event_search_container">
+  <h2 class="sub_heading"> Find An Event </h2>
+	<%= render partial: 'event_search' %>
+</div>
+<div class="add_event">
+  <%= image_tag('missing_piece.png') %>
+  <div class="add_event_message">
+    <h4> Can't Find Your Event? </h4>
+    <p>
+      <% if user_signed_in? %>
+        <b> <%= link_to 'Add your favorite live music event!', new_concert_path  %> </b>
+      <% else %>
+        Join us and show off your favorite live music
+      <% end %>
+    </p>
   </div>
-  <h1> Discover A Genre </h1>
-  <div id="genre_filter">
-  	<%= render partial: 'genre_filter' %>
+  <div class="add_event_links">
+    <b> 
+      <%= link_to 'Sign In', new_user_session_path %>
+      <br>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+    </b>
   </div>
 </div>
-<div id="index_rankings" class="box">
-  <%= render partial: 'index_rankings' %>
+<h1 class="main_heading"> Explore </h1>
+<div class="location_search_container">
+  <h2 class="sub_heading"> Discover Events Near You </h2>
+  <%= render partial: 'location_search' %>
 </div>
-<p class="no_bottom_margin">
-  <% if user_signed_in? %>
-    <b> <%= link_to 'Add your favorite live music event!', new_concert_path  %> </b>
-  <% else %>
-    <b> <%= link_to 'Sign In', new_user_session_path %> </b> or 
-    <b> <%= link_to 'Sign Up', new_user_registration_path %> </b> to create a new live music event!
-  <% end %>
-</p>
+<div class="genre_filter">
+  <h2 class="sub_heading"> Dive Into A Genre </h2>
+	<%= render partial: 'genre_filter' %>
+</div>
+<div class="rankings_container">
+  <h2 class="sub_heading"> The Rankings </h2>
+  <%= render partial: 'rankings' %>
+</div>

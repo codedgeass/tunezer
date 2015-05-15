@@ -1,6 +1,7 @@
 class Comment < ActiveRecord::Base
-  belongs_to :concert
+  belongs_to :commentable, polymorphic: true
   belongs_to :user
+  
   has_many :notifications, dependent: :delete_all
   
   validates :content, presence: true

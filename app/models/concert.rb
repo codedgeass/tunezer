@@ -1,11 +1,17 @@
 class Concert < ActiveRecord::Base
   include Rankable, Averageable
   
+  belongs_to :genre
+  belongs_to :venue
+  belongs_to :city
+  belongs_to :state
+  belongs_to :country
+  
   has_many :ratings, dependent: :delete_all
   has_many :videos, dependent: :delete_all
-  has_many :comments, -> { order('created_at DESC') }, dependent: :destroy
+  has_many :comments, -> { order('created_at DESC') }, as: :commentable, dependent: :destroy
   
-  validates :name, :genre, presence: true
+  validates :name, presence: true # TODO: Validate genre.
   validates :name, uniqueness: true
 
   scope :best_rank, -> { order('rank ASC') }

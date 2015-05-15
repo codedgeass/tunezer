@@ -1,5 +1,5 @@
 <p> <b> Search for an Artist or Festival </b> </p>
-<%= form_tag new_concert_path, method: :get, class: 'typewatch_search' do %>
+<%= form_tag new_concert_path, method: :get do %>
     Find a Concert: <%= text_field_tag 'new_search' %>
 <% end %>
 <div id="new_rankings"></div>
@@ -9,6 +9,26 @@
 	<div class="field">
     <%= f.label(:name, "Event or Performer's Name:") %>
 	  <%= f.text_field :name %> 
+  </div>
+  <div class="field">
+    <%= f.label :street_address %>
+    <%= f.text_field :street_address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
   </div>
 	<% genres = 
        ['Blues', 'Country', 'Classical', 'Electronic', 'Ethnic', 'Hip Hop', 'Jazz', 'Pop', 'R&B', 'Rock', 'Other'] %>

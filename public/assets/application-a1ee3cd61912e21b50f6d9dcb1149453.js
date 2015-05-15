@@ -10756,7 +10756,7 @@ return jQuery;
 // AJAX Pagination Functionality
 
 $(function() {
-  $('#comments, #show_videos, #index_rankings, #show_rankings').on('click', '.pagination a',
+  $('.comments, #show_videos, #index_rankings, #show_rankings').on('click', '.pagination a',
 	function() {
 		$.getScript(this.href); // URL of the link that they clicked
 		return false;
@@ -10774,7 +10774,7 @@ $(function() {
 
 $(function() {
   typewatchLoad();
-  $('#index_search_container').on('focusin', 'form.typewatch_search', function() {
+  $('#event_search_container').on('focusin', 'form.typewatch_search', function() {
     typewatchLoad();
   });
 });

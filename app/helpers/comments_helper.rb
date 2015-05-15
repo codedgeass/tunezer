@@ -20,4 +20,10 @@ module CommentsHelper
       "#{pluralize time_difference/31_556_926, 'year'} ago"
     end
   end
+  
+  def get_profile_id(username)
+    user = User.find_by(username: username)
+    profile = Profile.find_by(user_id: user.id)
+    profile.id
+  end
 end

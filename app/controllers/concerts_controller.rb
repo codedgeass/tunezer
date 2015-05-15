@@ -26,13 +26,14 @@ class ConcertsController < ApplicationController
   
   def index
     @genre = params[:genre] || 'All'
-    @index_search = params[:index_search]
+    @index_search = params[:term]
     @concerts = find_concerts
     if request.xhr?
       if params[:concerts_page]
         render 'display_page'
-      elsif params[:index_search]
-        render 'index_search'
+      elsif params[:term]
+        concerts = Concert.where('name ILIKE ?', "%#{@index_search}%").limit(10)
+        render json: concerts.map {|concert| { label: concert.name, value: "concerts/#{concert.id}" } }
       else # params[:genre]
         render 'filter_genre'
       end
@@ -73,10 +74,6 @@ class ConcertsController < ApplicationController
   
   def genre_conditions
     ['genre = ?', @genre] unless @genre == 'All'
-  end
-  
-  def keyword_conditions
-    ['name ILIKE ?', "%#{@index_search}%"] unless @index_search.blank?
   end
   
   def conditions
