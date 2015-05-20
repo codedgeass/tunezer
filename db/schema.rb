@@ -73,8 +73,6 @@ ActiveRecord::Schema.define(version: 20150511224513) do
     t.datetime "updated_at"
   end
 
-  add_index "genres", ["name"], name: "index_genres_on_name", using: :btree
-
   create_table "notifications", force: true do |t|
     t.string   "referrer_username"
     t.integer  "profile_id"

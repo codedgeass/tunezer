@@ -5,6 +5,7 @@ class CreateRatings < ActiveRecord::Migration
       t.integer :music
       t.integer :venue
       t.integer :atmosphere
+      
       t.references :concert
       t.references :user
 
