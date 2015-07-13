@@ -1,4 +1,5 @@
-<h1> <%= @concert.name %> </h1>
+<h1 class="main_heading"> <%= @concert.name %> </h1>
+<h2 class="sub_heading"> <%= @concert.get_address %> </h2>
 <div id="scores">
   <%= render partial: 'shared/display_scores', locals: { display: @concert } %>
 </div>

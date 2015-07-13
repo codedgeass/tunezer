@@ -56,15 +56,15 @@ ul {
   background-color: black;
   border-radius: 4px;
   color: white;
-  height: 120px;
+  height: 130px;
   margin-top: 30px;
   position: relative;
   text-align: left;
-  width: 639px;
+  width: 980px;
 }
   .add_event img {
-    height: 100px;
-    left: 10px;
+    height: 110px;
+    left: 30px;
     top: 10px;
     position: absolute;
   }
@@ -83,7 +83,7 @@ ul {
 
 .add_event_message {
   left: 30%;
-  top: 30px;
+  top: 28%;
   position: absolute;
 }
   .add_event_message p {
@@ -101,12 +101,13 @@ ul {
   
 .add_event_links {
   float: right;
-  margin-top: 20px;
-  margin-right: 50px;
+  margin-top: 25px;
+  margin-right: 90px;
 }
   .add_event_links a {
     display: block;
     color: orange;
+    font-size: 16px;
     margin: 5px auto;
   }
     .add_event_links a:hover {
@@ -128,13 +129,12 @@ ul {
 .event_search {
   float: left;
   font-size: 16px;
-  height: 27px;
-  width: 573px;
+  height: 30px;
+  width: 884px;
 }
 
 .event_search_container {
   display: inline-block;
-  overflow: hidden;
   width: auto;
 }
 
@@ -158,19 +158,20 @@ ul {
   background-color: white;
   border-radius: 10px;
   display: inline-block;
-  height: 80px;
-  margin: 8px 8px;
-  width: 90px;
+  height: 125px;
+  margin: 15px 15px;
+  width: 130px;
 }
 
 .genre_filter {
   margin-left: auto;
   margin-right: auto;
-  width: 654px;
+  width: 980px;
 }
-  .genre_filter h2 {
-    margin-left: 8px;
-  }
+
+.google_maps_container {
+  display: inline-block;
+}
 
 .greeting {
   bottom: 0;
@@ -203,13 +204,17 @@ ul {
   text-align: left;
 }
 
-.image_link img {
-  display: block;
-  height: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
+.image_link {
+  font-size: 16px;
 }
+  .image_link img {
+    display: block;
+    height: 85px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
 
 .inline {
   display: inline;
@@ -233,7 +238,7 @@ ul {
   position: relative;
   text-align: left;
   top: 22%;
-  width: 780px;
+  width: 980px;
   z-index: 2;
 }
   .intro_greeting p {
@@ -245,26 +250,13 @@ ul {
 
 .intro_image {
   background-image: url("bg4.jpg");
-  background-position: 60% 0%;
+  background-position: 58% 0%;
   background-repeat: no-repeat;
   background-size: contain;
   height: 350px;
   position: absolute;
   width: 100%;
   z-index: 1;
-}
-
-.location_search_container {
-  display: inline-block;
-  overflow: hidden;
-  width: auto;
-}
-
-.location_search {
-  float: left;
-  font-size: 16px;
-  height: 27px;
-  width: 573px;
 }
 
 .login {
@@ -360,15 +352,14 @@ ul {
     margin-left: 1em; 
   }
 
-  .rankings {
-    background-color: white;
-    border-radius: 10px;
-    width: 639px;
-  }
+.rankings {
+  background-color: white;
+  border-radius: 10px;
+  width: 980px;
+}
 
 .rankings_container {
   display: inline-block;
-  overflow: hidden;
   width: auto;
 }
 
@@ -383,11 +374,11 @@ ul {
   background-color: white;
   border-radius: 4px;
   float: left;
-  height: 32px;
-  width: 60px;
+  height: 35px;
+  width: 90px;
 }
 .search_image {
-  height: 32px;
+  height: 35px;
   width: auto;
 }
 

@@ -31,14 +31,14 @@ class RatingsController < ApplicationController
   private # ====================================================================================================
   
   def get_category_name
-    if params[:rating_people]
-      :people
-    elsif params[:rating_music]
-      :music
-    elsif params[:rating_venue]
-      :venue
-    else # params[:rating_atmosphere]
-      :atmosphere
+    if params[:rating_people_score]
+      :people_score
+    elsif params[:rating_music_score]
+      :music_score
+    elsif params[:rating_venue_score]
+      :venue_score
+    else # params[:rating_atmosphere_score]
+      :atmosphere_score
     end
   end
   

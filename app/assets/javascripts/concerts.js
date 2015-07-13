@@ -8,6 +8,7 @@ $(function() {
   });
 });
 
+
 // Autocomplete functionality for event searching in '/concerts'.
 
 $(function() {
@@ -24,10 +25,21 @@ $(function() {
   });
 });
 
+
 // Disables the submission on event searching in '/concerts'.
 
 $(function() {
-  $('.event_search_form').on('submit', function(){
+  $('.event_search_form').on('submit', function() {
     return false;
+  });
+});
+
+
+// Changes the colors in the genre selections.
+
+$(function() {
+  $('.genre_box a').on('click', function() {
+    $('.genre_box a').css('color','');
+    $(this).css('color','#09f');
   });
 });

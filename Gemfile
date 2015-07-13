@@ -7,6 +7,8 @@ gem 'pg'
 gem 'devise'
 gem 'will_paginate'
 gem 'sanitize'
+gem 'gmaps4rails'
+gem 'geocoder'
 
 gem 'thin'
 

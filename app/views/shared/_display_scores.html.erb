@@ -7,10 +7,13 @@
     Final Score: <%= number_with_precision( display.aggregate_score, precision: 1 ) %>/10 
 		from <%= display.number_of_votes %> <%= 'vote'.pluralize(display.number_of_votes) %>
 	</h3>
+  <h3>
+    Final Ranking: <%= display.rank %>
+  </h3>
 	<ul>
-		<li> <b> The People: <%= number_with_precision( display.people, precision: 1 ) %> </b> </li>
-		<li> <b> The Music: <%= number_with_precision( display.music, precision: 1 ) %> </b>	</li>
-		<li> <b> The Venue: <%= number_with_precision( display.venue, precision: 1 ) %> </b>	</li>
-		<li> <b> The Atmosphere: <%= number_with_precision( display.atmosphere, precision: 1 ) %> </b> </li>
+		<li> <b> The People: <%= number_with_precision( display.people_score, precision: 1 ) %> </b> </li>
+		<li> <b> The Music: <%= number_with_precision( display.music_score, precision: 1 ) %> </b>	</li>
+		<li> <b> The Venue: <%= number_with_precision( display.venue_score, precision: 1 ) %> </b>	</li>
+		<li> <b> The Atmosphere: <%= number_with_precision( display.atmosphere_score, precision: 1 ) %> </b> </li>
 	</ul>
 <% end %>

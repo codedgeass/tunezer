@@ -1,1 +1,4 @@
-$('.rankings').html('<%= escape_javascript render partial: 'rankings' %>');
+$('.rankings_container').html('<%= escape_javascript render partial: 'rankings' %>');
+handler.removeMarkers(markers);
+markers = handler.addMarkers(<%= raw @gmaps_markers.to_json %>);
+$('.google_maps_heading').html('<%= escape_javascript render partial: 'google_maps_heading' %>');

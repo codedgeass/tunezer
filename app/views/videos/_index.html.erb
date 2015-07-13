@@ -11,7 +11,7 @@
   			<h3 class="no_top_or_bottom_margins">
           <%= link_to 'Comment on this video', concert_video_path(
                 concert_id: @concert.id, id: video.id, reference_video: true), remote: true %> 
-          <% if current_user.admin? %>
+          <% if current_user && current_user.admin? %>
             <%= link_to 'Delete Video', concert_video_path(
                   @concert.id, video.id, video_number: video_number), method: :delete, remote: true %>
           <% end %>

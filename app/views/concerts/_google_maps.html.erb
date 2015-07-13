@@ -1,0 +1,29 @@
+<script>
+  // Google Maps Functionality
+
+  $(function() {
+    handler = Gmaps.build('Google');
+    handler.buildMap(
+      { 
+        provider: { Zoom: 13 }, 
+        internal: { id: 'map' },
+      }, 
+      function(){
+        if(navigator.geolocation)
+          navigator.geolocation.getCurrentPosition(displayOnMap);
+      }
+    );
+
+    function displayOnMap(position) {
+      markers = handler.addMarkers(<%= raw @gmaps_markers.to_json %>);
+      handler.map.centerOn( {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      });
+    };
+  });
+</script>
+
+<div style="width: 980px">
+  <div id="map" style="width: 980px; height: 551px;"></div>
+</div>

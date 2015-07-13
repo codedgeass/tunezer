@@ -18,7 +18,7 @@
       <% if user_signed_in? %>
         <b> <%= link_to 'Add your favorite live music event!', new_concert_path  %> </b>
       <% else %>
-        Join us and show off your favorite live music
+        Join us and show off your favorite live music to the world
       <% end %>
     </p>
   </div>
@@ -31,15 +31,13 @@
   </div>
 </div>
 <h1 class="main_heading"> Explore </h1>
-<div class="location_search_container">
-  <h2 class="sub_heading"> Discover Events Near You </h2>
-  <%= render partial: 'location_search' %>
-</div>
 <div class="genre_filter">
-  <h2 class="sub_heading"> Dive Into A Genre </h2>
 	<%= render partial: 'genre_filter' %>
 </div>
+<div class="google_maps_container">
+  <%= render partial: 'google_maps_heading' %>
+  <%= render partial: 'google_maps' %>
+</div>
 <div class="rankings_container">
-  <h2 class="sub_heading"> The Rankings </h2>
   <%= render partial: 'rankings' %>
 </div>

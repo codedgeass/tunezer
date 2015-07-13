@@ -12,13 +12,20 @@ jazz       = Genre.create name: 'Jazz'
 pop        = Genre.create name: 'Pop'
 rnb        = Genre.create name: 'R&B'
 rock       = Genre.create name: 'Rock'
+multiple   = Genre.create name: 'Multiple'
 other      = Genre.create name: 'Other'
 
-bayfront_park = Venue.create name: 'Bayfront Park'
-miami         = City.create name: 'Miami'
-florida       = State.create name: 'Florida'
+grant_park    = Venue.create name: 'Grant Park'
+chicago       = City.create name: 'Chicago'
+illinois      = State.create name: 'Illinois'
 united_states = Country.create name: 'United States'
 
-Concert.create(name: 'Ultra Music Festival', number_of_votes: 0, street_address: '301 Biscayne Blvd', 
-  zip: '33132', genre_id: electronic.id, venue_id: bayfront_park.id, city_id: miami.id, state_id: florida.id,
+soldier_field = Venue.create name: 'Soldier Field'
+
+Concert.create(name: 'Lollapalooza', number_of_votes: 0, street_address: '337 E Randolph St', 
+  zip: '60601', genre_id: multiple.id, venue_id: grant_park.id, city_id: chicago.id, state_id: illinois.id,
+  country_id: united_states.id, user_id: seed_user.id)
+  
+Concert.create(name: 'Spring Awakening', number_of_votes: 0, street_address: '1410 Museum Campus Dr', 
+  zip: '60605', genre_id: electronic.id, venue_id: soldier_field.id, city_id: chicago.id, state_id: illinois.id,
   country_id: united_states.id, user_id: seed_user.id)

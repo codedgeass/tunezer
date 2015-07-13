@@ -26,22 +26,27 @@ class ConcertsController < ApplicationController
   
   def index
     @genre = params[:genre] || 'All'
-    @index_search = params[:term]
     @concerts = find_concerts
+    @gmaps_markers = Gmaps4rails.build_markers(@concerts) do |concert, marker|
+      marker.lat concert.latitude
+      marker.lng concert.longitude
+      marker.infowindow render_to_string( partial: 'info_window_link', locals: { concert: concert } )
+    end
     if request.xhr?
       if params[:concerts_page]
         render 'display_page'
       elsif params[:term]
-        concerts = Concert.where('name ILIKE ?', "%#{@index_search}%").limit(10)
+        concerts = Concert.where('name ILIKE ?', "#{params[:term]}%").limit(10)
         render json: concerts.map {|concert| { label: concert.name, value: "concerts/#{concert.id}" } }
       else # params[:genre]
+        headers['Content-Type'] = 'text/javascript; charset=utf-8' # workaround for a bug in `render_to_string`
         render 'filter_genre'
       end
     end
   end
 
   def show
-    @concert = Concert.find(params[:id])
+    @concert = Concert.includes(:city, :state, :country).find(params[:id])
     @videos = @concert.videos.page(1)
     @comment = Comment.new
     # `linked_comment` is passed from a notification in a user's profile page.
@@ -56,7 +61,6 @@ class ConcertsController < ApplicationController
     @concert = Concert.find(params[:id])
     @concert.destroy
     @genre = params[:genre] || 'All'
-    @index_search = params[:index_search]
     @concerts = find_concerts
   end
   
@@ -66,29 +70,14 @@ class ConcertsController < ApplicationController
     params.require(:concert).permit(:name, :genre)
   end
   
-  # These methods filter results in the index action. TODO: Move the methods to their own model.
+  # Used in `index` and `destroy`.
   
   def find_concerts
-    Concert.where(conditions).best_rank.page(params[:concerts_page]).per_page(10)
-  end
-  
-  def genre_conditions
-    ['genre = ?', @genre] unless @genre == 'All'
-  end
-  
-  def conditions
-    [conditions_clauses.join(' AND '), *conditions_options]
-  end
-  
-  def conditions_clauses
-    conditions_parts.map { |condition| condition.first }
-  end
-  
-  def conditions_options
-    conditions_parts.map { |condition| condition[1..-1] }.flatten
-  end
-  
-  def conditions_parts
-    private_methods(false).grep(/_conditions$/) { |m| send(m) }.compact
+    if @genre == 'All'
+      Concert.includes(:genre, :venue, :city, :state, :country).best_rank.page(params[:concerts_page])
+    else
+      Concert.joins(:genre).where(genres: { name: params[:genre] } ).
+        preload(:genre, :venue, :city, :state, :country).best_rank.page(params[:concerts_page])
+    end
   end
 end

@@ -13,13 +13,21 @@ class Concert < ActiveRecord::Base
   
   validates :name, presence: true # TODO: Validate genre.
   validates :name, uniqueness: true
+  
+  after_validation :geocode
 
   scope :best_rank, -> { order('rank ASC') }
   scope :ignore_null_ranks, -> { where('rank IS NOT NULL') }
   
   before_destroy :remove_concert_from_concert_rankings
   
-  self.per_page = 5
+  geocoded_by :get_address
+  
+  self.per_page = 10
+  
+  def get_address
+    self.street_address + ' ' + self.city.name + ' ' + self.state.name + ' ' + self.country.name
+  end
   
   private # ====================================================================================================
   

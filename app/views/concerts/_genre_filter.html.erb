@@ -1,74 +1,75 @@
+<h2 class="sub_heading"> Dive Into A Genre </h2>
 <ul class='horizontal'>
-	<li class="genre_box"> 
-    <%= link_to concerts_path(genre: 'All'), class: 'image_link', remote: true do %>
-      <%= image_tag('all.gif') %>
-      <b> All </b>
-    <% end %>
-  </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Blues'), class: 'image_link', remote: true do %> 
       <%= image_tag('blues.jpg') %>
-      <b> Blues </b>
+      <span> <b> Blues </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Classical'), class: 'image_link', remote: true do %>
       <%= image_tag('classical.gif') %>
-      <b> Classical </b>
+      <span> <b> Classical </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Country'), class: 'image_link', remote: true do %> 
       <%= image_tag('country.jpg') %>
-      <b> Country </b>
+      <span> <b> Country </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Electronic'), class: 'image_link', remote: true do %>
       <%= image_tag('electronic.jpg') %>
-      <b> Electronic </b>
+      <span> <b> Electronic </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Ethnic'), class: 'image_link', remote: true do %> 
       <%= image_tag('ethnic.jpg') %>
-      <b> Ethnic </b>
+      <span> <b> Ethnic </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Hip Hop'), class: 'image_link', remote: true do %> 
       <%= image_tag('hiphop.jpg') %>
-      <b> Hip Hop </b>
+      <span> <b> Hip Hop </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Jazz'), class: 'image_link', remote: true do %>
       <%= image_tag('jazz.jpg') %>
-      <b> Jazz </b>
+      <span> <b> Jazz </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Pop'), class: 'image_link', remote: true do %> 
       <%= image_tag('pop.jpg') %>
-      <b> Pop </b>
+      <span> <b> Pop </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'R&B'), class: 'image_link', remote: true do %> 
-      <%= image_tag('rnb.jpg') %>
-      <b> R&B </b>
+      <%= image_tag('rnb.png') %>
+      <span> <b> R&B </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Rock'), class: 'image_link', remote: true do %> 
       <%= image_tag('rock.jpg') %>
-      <b> Rock </b>
+      <span> <b> Rock </b> </span> 
     <% end %>
   </li>
 	<li class="genre_box"> 
     <%= link_to concerts_path(genre: 'Other'), class: 'image_link', remote: true do %> 
       <%= image_tag('other.jpg') %>
-      <b> Other </b>
+      <span> <b> Other </b> </span> 
+    <% end %>
+  </li>
+	<li class="genre_box"> 
+    <%= link_to concerts_path(genre: 'Multiple'), class: 'image_link', remote: true do %>
+      <%= image_tag('multiple.gif') %>
+      <span> <b> Multiple </b> </span>
     <% end %>
   </li>
 </ul>

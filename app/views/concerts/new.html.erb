@@ -30,8 +30,7 @@
     <%= f.label :country %>
     <%= f.text_field :country %>
   </div>
-	<% genres = 
-       ['Blues', 'Country', 'Classical', 'Electronic', 'Ethnic', 'Hip Hop', 'Jazz', 'Pop', 'R&B', 'Rock', 'Other'] %>
+	<% genres = ['Blues', 'Country', 'Classical', 'Electronic', 'Ethnic', 'Hip Hop', 'Jazz', 'Pop', 'R&B', 'Rock', 'Other', 'Multiple'] %>
 	<div class="field"> Genre: <%= f.select(:genre, genres, { include_blank: true }) %> </div>
 	<div class="actions"> <%= f.submit 'Create Event' %> </div>
 <% end %>

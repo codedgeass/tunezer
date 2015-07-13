@@ -1,5 +1,11 @@
+<h2 class="sub_heading">
+  The Rankings
+  <% if @genre != 'All' %>
+    - <%= @genre %>
+  <% end %>
+</h2>
 <div class="rankings">
-  <% if @concerts.empty? && @genre == 'All' && @index_search.nil? %>
+  <% if @concerts.empty? && @genre == 'All' %>
        <p> There are no concerts. Add some! </p>
   <% elsif @concerts.empty? %>
     <p> Your search turned up empty. Time to add your favorite concert to our website! </p>
@@ -11,7 +17,9 @@
     		<th> Score </th>
     		<th> Votes </th>
     		<th> Genre </th>
-        <th> Location </th>
+        <th> City </th>
+        <th> State </th>
+        <th> Country </th>
     	</tr>
     	<% @concerts.each do |c| %>
     		<tr>
@@ -33,8 +41,10 @@
         		<% end %>
           </td>
       		<td> <%= c.number_of_votes %> </td>
-      		<td> <%#= c.genre %> </td>
-          <td> <%#= c.location %> </td>
+      		<td> <%= c.genre.name %> </td>
+          <td> <%= c.city.name %> </td>
+          <td> <%= c.state.name %> </td>
+          <td> <%= c.country.name %> </td>
           <% if user_signed_in? %>
             <td>
               <% if current_user.admin? %>

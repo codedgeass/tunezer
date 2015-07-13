@@ -6,11 +6,15 @@ class CreateConcerts < ActiveRecord::Migration
       t.string :street_address
       t.string :zip
       
-      t.decimal :people
-      t.decimal :music
-      t.decimal :venue
-      t.decimal :atmosphere
+      t.float :latitude
+      t.float :longitude
+      
+      t.decimal :people_score
+      t.decimal :music_score
+      t.decimal :venue_score
+      t.decimal :atmosphere_score
       t.decimal :aggregate_score
+      
       t.integer :number_of_votes
       t.integer :rank
       

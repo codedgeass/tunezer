@@ -3,20 +3,21 @@
 	<ul>
 		<li class="voting_stars"> 
 			The People 
-      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'people', concert_id: @concert.id } %> 
+      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'people_score', concert_id: @concert.id } %> 
 		</li>
 		<li class="voting_stars"> 
 			The Music 
-      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'music', concert_id: @concert.id } %> 
+      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'music_score', concert_id: @concert.id } %> 
 		</li>
 		<br>
 		<li class="voting_stars"> 
 			The Venue 
-      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'venue', concert_id: @concert.id } %> 
+      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'venue_score', concert_id: @concert.id } %> 
 		</li>
 		<li class="voting_stars"> 
 			The Atmosphere 
-      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'atmosphere', concert_id: @concert.id } %> 
+      <%= render partial: 'ratings/voting_forms', 
+            locals: { class_name: 'atmosphere_score', concert_id: @concert.id } %> 
 		</li>
 	</ul>
 	<div id="vote_counted">

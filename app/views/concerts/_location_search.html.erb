@@ -1,7 +1,0 @@
-<%= form_tag locations_path, method: :get, class: 'location_search_form' do %>
-  <%= text_field_tag 'index_location_search', nil, class: 'location_search', 
-        placeholder: 'Search for a city, state, or country' %>
-  <span class="search_button">
-    <%= image_submit_tag 'search.png', class: 'search_image', remote: true %>
-  </span>
-<% end %>

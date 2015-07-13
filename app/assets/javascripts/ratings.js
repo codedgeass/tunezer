@@ -2,21 +2,21 @@
 
 $(function() { // Sets up the stars to match the user's data
 	$.renderOldVotes = function() {
-		var checkedId1 = $('form.people > input:checked').attr('id');
-		var checkedId2 = $('form.music > input:checked').attr('id');
-		var checkedId3 = $('form.venue > input:checked').attr('id');
-		var checkedId4 = $('form.atmosphere > input:checked').attr('id');
-		$('form.people > label[for=' + checkedId1 + ']').prevAll().andSelf().addClass('checked');
-		$('form.music > label[for=' + checkedId2 + ']').prevAll().andSelf().addClass('checked');
-		$('form.venue > label[for=' + checkedId3 + ']').prevAll().andSelf().addClass('checked');
-		$('form.atmosphere > label[for=' + checkedId4 + ']').prevAll().andSelf().addClass('checked');
+		var checkedId1 = $('form.people_score > input:checked').attr('id');
+		var checkedId2 = $('form.music_score > input:checked').attr('id');
+		var checkedId3 = $('form.venue_score > input:checked').attr('id');
+		var checkedId4 = $('form.atmosphere_score > input:checked').attr('id');
+		$('form.people_score > label[for=' + checkedId1 + ']').prevAll().andSelf().addClass('checked');
+		$('form.music_score > label[for=' + checkedId2 + ']').prevAll().andSelf().addClass('checked');
+		$('form.venue_score > label[for=' + checkedId3 + ']').prevAll().andSelf().addClass('checked');
+		$('form.atmosphere_score > label[for=' + checkedId4 + ']').prevAll().andSelf().addClass('checked');
 	};
 	$.renderOldVotes();
 });
 
 $(document).ready(function() {
 	// Makes stars glow on hover.
-	$('#voting').on('mouseenter', 'form.people > label, form.music > label, form.venue > label, form.atmosphere > label',
+	$('#voting').on('mouseenter', 'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
 		function() {
 			$this = $(this);
 			$($this).siblings().andSelf().removeClass('checked');
@@ -24,7 +24,7 @@ $(document).ready(function() {
 		}
 	);
   
-	$('#voting').on('mouseout', 'form.people > label, form.music > label, form.venue > label, form.atmosphere > label',
+	$('#voting').on('mouseout', 'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
 		function() {
 			$this = $(this);
 			$($this).siblings().andSelf().removeClass('glow');
@@ -32,26 +32,26 @@ $(document).ready(function() {
 		}
 	);
   
-	$('#voting').on('click', 'form.people > label, form.music > label, form.venue > label, form.atmosphere > label',
+	$('#voting').on('click', 'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
     function() {
   		$(this).siblings().removeClass('checked');
   		$(this).prevAll().andSelf().addClass('checked');
 	  }
   );
   
-	$('#voting').on('change', 'form.people', function() {
-		$('form.people').submit();
+	$('#voting').on('change', 'form.people_score', function() {
+		$('form.people_score').submit();
 	});
   
-	$('#voting').on('change', 'form.music', function() {
-		$('form.music').submit();
+	$('#voting').on('change', 'form.music_score', function() {
+		$('form.music_score').submit();
 	});
   
-	$('#voting').on('change', 'form.venue', function() {
-		$('form.venue').submit();
+	$('#voting').on('change', 'form.venue_score', function() {
+		$('form.venue_score').submit();
 	});
   
-	$('#voting').on('change', 'form.atmosphere', function() {
-		$('form.atmosphere').submit();
+	$('#voting').on('change', 'form.atmosphere_score', function() {
+		$('form.atmosphere_score').submit();
 	});
 });

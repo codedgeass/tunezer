@@ -15,7 +15,7 @@ class Rating < ActiveRecord::Base
   end
   
   def complete?
-    if self.people && self.music && self.venue && self.atmosphere
+    if self.people_score && self.music_score && self.venue_score && self.atmosphere_score
       true
     else
       false
