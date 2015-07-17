@@ -6,7 +6,7 @@ class Video < ActiveRecord::Base
     
   before_validation :truncate_url
   
-  self.per_page = 1
+  self.per_page = 2
   
   private # ====================================================================================================
   

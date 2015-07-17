@@ -24,9 +24,9 @@
   </div>
   <div class="add_event_links">
     <b> 
-      <%= link_to 'Sign In', new_user_session_path %>
+      <%= link_to 'Sign In', new_user_session_path, class: 'orangey_link' %>
       <br>
-      <%= link_to 'Sign Up', new_user_registration_path %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'orangey_link' %>
     </b>
   </div>
 </div>
@@ -38,6 +38,6 @@
   <%= render partial: 'google_maps_heading' %>
   <%= render partial: 'google_maps' %>
 </div>
-<div class="rankings_container">
+<div class="rankings_container end_page">
   <%= render partial: 'rankings' %>
 </div>

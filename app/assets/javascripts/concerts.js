@@ -35,11 +35,18 @@ $(function() {
 });
 
 
-// Changes the colors in the genre selections.
+// Changes the colors and the submission content of the genre filter selections.
 
 $(function() {
-  $('.genre_box a').on('click', function() {
-    $('.genre_box a').css('color','');
-    $(this).css('color','#09f');
+  $('.genre_link').on('click', function() {
+    if ( $(this).hasClass('selected') ) {
+      $(this).removeClass('selected');
+      $.getScript('/concerts?genre=All');
+      return false;
+    }
+    else {
+      $('.genre_link').removeClass('selected');
+      $(this).addClass('selected');
+    }
   });
 });

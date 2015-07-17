@@ -12,7 +12,7 @@ body {
 	font-family: "Avenir Next", verdana, arial, helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.4;
-  margin-bottom: 15px;
+  margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -106,13 +106,9 @@ ul {
 }
   .add_event_links a {
     display: block;
-    color: orange;
     font-size: 16px;
     margin: 5px auto;
   }
-    .add_event_links a:hover {
-      color: #0df;
-    }
 
 .block {
   display: block;
@@ -124,6 +120,10 @@ ul {
 
 .category_group {
   margin-top: 20px;
+}
+
+.end_page {
+  margin-bottom: 15px;
 }
 
 .event_search {
@@ -154,28 +154,14 @@ ul {
   width: 980px;
 }
 
-.genre_box {
-  background-color: white;
-  border-radius: 10px;
-  display: inline-block;
-  height: 125px;
-  margin: 15px 15px;
-  width: 130px;
-}
-
-.genre_filter {
-  margin-left: auto;
-  margin-right: auto;
-  width: 980px;
-}
-
 .google_maps_container {
   display: inline-block;
 }
 
 .greeting {
-  bottom: 0;
-  left: 440px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
 }
 
@@ -187,13 +173,6 @@ ul {
   position: relative;
   width: 980px;
 }
-  .header a {
-    color: #ffbb00;
-  }
-  .header a:hover {
-    background-color: black;
-    color: #0df;
-  }
 
 .header_container {
   background-color: black;
@@ -204,17 +183,9 @@ ul {
   text-align: left;
 }
 
-.image_link {
-  font-size: 16px;
+.horizontal li {
+  display: inline-block;
 }
-  .image_link img {
-    display: block;
-    height: 85px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-  }
 
 .inline {
   display: inline;
@@ -249,7 +220,7 @@ ul {
   }
 
 .intro_image {
-  background-image: url("bg4.jpg");
+  background-image: url("bg.jpg");
   background-position: 58% 0%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -260,10 +231,11 @@ ul {
 }
 
 .login {
-  bottom: 0px;
   font-size: 12px;
   position: absolute;
   right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
 }
   .login .field {
     margin-bottom: 0;
@@ -273,14 +245,11 @@ ul {
   }
 
 .logo {
-  bottom: 15%;
-  float: left;
   left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
   position: absolute;
 }
-  .logo:hover {
-    background-color: white;
-  }
 
 .main_heading {
   color: #555;
@@ -308,8 +277,16 @@ ul {
   margin: 0 auto;
 }
 
-.orange_link {
-  color: orange;
+.orangey_link {
+  color: #ffbb00;
+}
+  .orangey_link:hover {
+    color: #0df;
+  }
+
+.padding_separator {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .pagination {
@@ -398,7 +375,15 @@ ul {
   text-shadow: 0px 1px 0px #fff;
 }
 
+.white_bg {
+  background-color: white;
+}
+
   
+#concert_comments {
+  background-color: white;
+}
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -420,3 +405,8 @@ ul {
   	font-size: 12px;
   	list-style-type: none; 
   }
+  
+#show_videos {
+  background-color: black;
+  color: white;
+}

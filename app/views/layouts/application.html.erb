@@ -25,12 +25,13 @@
       <% end %>
       <% if user_signed_in? %>
         <span class="greeting"> 
-          Rock on, <%= link_to "#{current_user.username}", profile_path(current_user.profile.id) %> 
+          Rock on, 
+          <%= link_to "#{current_user.username}", profile_path(current_user.profile.id), class: 'orangey_link' %> 
         </span>
       <% end %>
       <span class="login">
         <% if user_signed_in? %>
-        	<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'sign_out' %>
+        	<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'sign_out orangey_link' %>
         <% else %>
           <%= form_for(:user, url: session_path(:user), html: { class: '' }) do |f| %>
             <table>
@@ -47,7 +48,9 @@
                   </span>
                 </td>
                 <td> 
-                  <span class="register_notice"> Or <%= link_to 'Join the Fun!', new_user_registration_path %> </span>
+                  <span class="register_notice"> 
+                    Or <%= link_to 'Join the Fun!', new_user_registration_path, class: 'orangey_link' %> 
+                  </span>
                 </td>
               </tr>
               <tr>
@@ -57,7 +60,7 @@
                       <%= f.label :remember_me %>
                   <%# end -%>
                 </td>
-                <td> <%= link_to 'Forgot your password?', new_password_path(:user) %> </td>
+                <td> <%= link_to 'Forgot your password?', new_password_path(:user), class: 'orangey_link' %> </td>
               </tr>
             </table>
           <% end %> 

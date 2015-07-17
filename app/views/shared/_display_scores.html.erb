@@ -2,13 +2,12 @@
 <% if display.number_of_votes == 0 %>
 	<h3> No votes have been counted yet. </h3>
 <% else %>
-  <%= render_stars(display.aggregate_score) %>
 	<h3> 
-    Final Score: <%= number_with_precision( display.aggregate_score, precision: 1 ) %>/10 
+    Score: <%= number_with_precision( display.aggregate_score, precision: 1 ) %>/10 
 		from <%= display.number_of_votes %> <%= 'vote'.pluralize(display.number_of_votes) %>
 	</h3>
   <h3>
-    Final Ranking: <%= display.rank %>
+    Ranking: <%= display.rank %>
   </h3>
 	<ul>
 		<li> <b> The People: <%= number_with_precision( display.people_score, precision: 1 ) %> </b> </li>

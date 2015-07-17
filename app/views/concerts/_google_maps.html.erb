@@ -5,10 +5,10 @@
     handler = Gmaps.build('Google');
     handler.buildMap(
       { 
-        provider: { Zoom: 13 }, 
-        internal: { id: 'map' },
+        provider: { Zoom: 13, scrollwheel: false }, 
+        internal: { id: 'map' }
       }, 
-      function(){
+      function() {
         if(navigator.geolocation)
           navigator.geolocation.getCurrentPosition(displayOnMap);
       }

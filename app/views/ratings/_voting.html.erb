@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 	<h3> Your Ratings </h3>
-	<ul>
+	<ul class="no_bottom_margin">
 		<li class="voting_stars"> 
 			The People 
       <%= render partial: 'ratings/voting_forms', locals: { class_name: 'people_score', concert_id: @concert.id } %> 
