@@ -8,20 +8,14 @@ a {
 
 body {
   background-color: #eee;
-  color: black;
+  color: #333;
 	font-family: "Avenir Next", verdana, arial, helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.4;
-  margin-bottom: 0;
+  margin-bottom: 15px;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
-  text-align: center;
-}
-
-div {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,14 +28,6 @@ pre {
   font-size: 11px; 
 }
 
-table.center {
-	margin: 0 auto;
-}
-
-td, th {
-	text-align: left;
-}
-
 ul { 
 	list-style-type: none;
 	padding: 0 0;
@@ -52,14 +38,19 @@ ul {
   margin: 10px;
 }
 
+.actions {
+  margin: 10px 0;
+}
+
 .add_event {
   background-color: black;
   border-radius: 4px;
   color: white;
   height: 130px;
   margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-  text-align: left;
   width: 980px;
 }
   .add_event img {
@@ -69,11 +60,8 @@ ul {
     position: absolute;
   }
   .add_event h4 {
-    color: #f2f2f2;
+    color: white;
     display: block;
-    font-family: Lato, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
     line-height: 20px;
     margin-bottom: 10px;
     margin-left: 0px;
@@ -109,21 +97,39 @@ ul {
     font-size: 16px;
     margin: 5px auto;
   }
+  
+.address {
+  float: left;
+  font-weight: bold;
+  margin-right: 50px;
+}
 
 .block {
   display: block;
 }
 
-.category {
-  margin: 2px;
+.box {
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin: 15px auto;
+  padding: 25px 0;
+  width: 980px;
 }
 
-.category_group {
-  margin-top: 20px;
+h4.category {
+  color: #666666;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.end_page {
-  margin-bottom: 15px;
+.box.event_location {
+  padding: 50px 90px;
+}
+
+.content_in_box {
+  margin-left: 15px;
 }
 
 .event_search {
@@ -134,12 +140,21 @@ ul {
 }
 
 .event_search_container {
-  display: inline-block;
-  width: auto;
+  margin: 0 auto;
+  width: 980px;
+}
+
+.feedback_banner {
+  background-color: #fcf4d8;
+  color: black;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+  width: 950px;
 }
 
 .field {
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .field_with_errors {
@@ -148,14 +163,13 @@ ul {
   display: inline-block;
 }
 
-.float_box {
-  margin-left: auto;
-  margin-right: auto;
-  width: 980px;
+.float_right {
+  float: right;
 }
 
 .google_maps_container {
-  display: inline-block;
+  margin: 0 auto;
+  width: 980px;
 }
 
 .greeting {
@@ -168,6 +182,7 @@ ul {
 .header {
   background-color: black;
   color: white;
+  margin: 0 auto;
   min-height: 80px;
   overflow: visible;
   position: relative;
@@ -193,6 +208,13 @@ ul {
 
 .inline_block {
 	display: inline-block;
+}
+
+.heading_inside_box {
+  color: #333;
+  font-size: 27px;
+  font-weight: normal;
+  line-height: 27px;
 }
 
 .intro {
@@ -284,11 +306,6 @@ ul {
     color: #0df;
   }
 
-.padding_separator {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
 .pagination {
   text-align: center;
   padding: 0.3em;
@@ -301,6 +318,9 @@ ul {
   .pagination .disabled {
     color: #aaaaaa; 
   }
+    .pagination.black_bg .disabled {
+      color: #cccccc;
+    }
   .pagination .current {
     font-style: normal;
     font-weight: bold;
@@ -315,10 +335,20 @@ ul {
       background: #0063dc;
       color: white; 
     }
+    .pagination.black_bg a {
+      color: #0df;
+    }
+      .pagination.black_bg a:hover {
+        background-color: #0df;
+        color: black;
+      }
   .pagination .pagination_info {
     color: #aaaaaa;
     padding-top: 0.8em; 
   }
+    .pagination.black_bg .pagination_info {
+      color: #cccccc;
+    }
   .pagination .previous_page, .pagination .next_page {
     border-width: 2px; 
   }
@@ -330,14 +360,81 @@ ul {
   }
 
 .rankings {
-  background-color: white;
-  border-radius: 10px;
+  margin: 0 auto;
   width: 980px;
 }
 
 .rankings_container {
-  display: inline-block;
-  width: auto;
+  background-color: white;
+  width: 980px;
+}
+
+.rankings_list {
+  border-radius: 10px;
+  margin-left: 15px;
+  width: 950px;
+}
+  .rankings_container .heading_inside_box {
+    margin-left: 15px;
+    padding-top: 15px;
+  }
+  .rankings_list table {
+    border-spacing: 0 1px;
+  }
+
+  .rankings_list td, .rankings_list th {
+    border-collapse: collapse;
+    padding: 10px 10px;
+  }
+  .rankings_list th {
+    border-collapse: collapse;
+    color: #333;
+    font-size: 12px;
+    padding-bottom: 3px;
+    text-align: left;
+    vertical-align: bottom;
+  }
+  .rankings_list thead {
+    border-bottom-color: rgb(128, 128, 128);
+    border-collapse: collapse;
+    border-left-color: rgb(128, 128, 128);
+    border-right-color: rgb(128, 128, 128);
+    border-top-color: rgb(128, 128, 128);
+    color: rgb(51, 51, 51);
+    display: table-header-group;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+  .rankings_list tbody tr:nth-child(odd) {
+      background-color: #f6f6f5;
+      border: #fff 1px solid;
+  }
+  .rankings_list tbody tr:nth-child(even) {
+      background-color: #fbfbfb;
+      border: #fff 1px solid;
+  }
+
+.rankings_table {
+  width: 950px;
+}
+
+.rankings_header {
+  background-color: rgb(246, 246, 245);
+  background-image: -webkit-linear-gradient(bottom, rgb(255, 255, 255) 15%, rgb(246, 246, 245) 85%);
+  border-top-color: rgb(242, 242, 242);
+  border-top-style: solid;
+  border-top-width: 1px;
+  color: rgb(51, 51, 51);
+  display: block;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  padding-bottom: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 7px;
 }
 
 .register_notice {
@@ -346,17 +443,48 @@ ul {
   .register_notice a {
     margin-left: 5px;
   }
+  
+.score_box {
+  background-color: #65B284;
+  height: 280px;
+  display: inline-block;
+  margin: 27px 27px;
+  position: relative;
+  width: 187px;
+}
+  .score_box .category {
+    color: white;
+    font-size: 20px;
+    font-weight: 700px;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    white-space: nowrap;
+  }
+  .score_box .score {
+    color: white;
+    font: 'Frutiger';
+    font-size: 100px;
+    font-weight: 1000px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 
-.search_button {
+.search_image {
   background-color: white;
   border-radius: 4px;
-  float: left;
   height: 35px;
-  width: 90px;
+  padding-left: 27.5px;
+  padding-right: 27.5px;
 }
-.search_image {
-  height: 35px;
-  width: auto;
+
+.section {
+  border-radius: 2px;
+  margin: 0 auto;
+  width: 980px;
 }
 
 .sign_out {
@@ -371,18 +499,18 @@ ul {
   line-height: 40px;
   margin-top: 40px;
   margin-bottom: 20px;
-  text-align: left;
   text-shadow: 0px 1px 0px #fff;
+}
+
+.dark_bg {
+  background-color: #494949;
+  color: white;
 }
 
 .white_bg {
   background-color: white;
 }
 
-  
-#concert_comments {
-  background-color: white;
-}
 
 #error_explanation {
   width: 450px;
@@ -406,7 +534,18 @@ ul {
   	list-style-type: none; 
   }
   
+#final_scores {
+  margin: 0 auto;
+  width: 730px;
+}
+
 #show_videos {
   background-color: black;
   color: white;
+  text-align: center;
+  width: 980px;
+}
+
+#voting {
+  text-align: center;
 }

@@ -6,8 +6,6 @@ class Comment < ActiveRecord::Base
   
   validates :content, presence: true
   
-  self.per_page = 5
-  
   def parse_symbols
     content_with_links = ''
     words = self.content.split

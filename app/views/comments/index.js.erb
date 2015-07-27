@@ -1,1 +1,6 @@
-$('.comments').html('<%= escape_javascript render partial: 'comments/index', locals: { commentable: @commentable } %>');
+$('.comment_entries').append('<%= escape_javascript render partial: 'index' %>');
+<% if @comments.size == 10 %>
+  $('.paginator').html('<%= escape_javascript render partial: 'paginator' %>');
+<% else %>
+  $('.paginator').hide();
+<% end %>

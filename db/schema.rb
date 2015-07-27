@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150511224513) do
     t.decimal  "venue_score"
     t.decimal  "atmosphere_score"
     t.decimal  "aggregate_score"
-    t.integer  "number_of_votes"
+    t.integer  "votes"
     t.integer  "rank"
     t.integer  "user_id"
     t.integer  "genre_id"

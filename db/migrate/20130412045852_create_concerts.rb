@@ -15,7 +15,7 @@ class CreateConcerts < ActiveRecord::Migration
       t.decimal :atmosphere_score
       t.decimal :aggregate_score
       
-      t.integer :number_of_votes
+      t.integer :votes
       t.integer :rank
       
       t.references :user

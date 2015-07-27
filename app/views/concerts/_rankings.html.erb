@@ -1,16 +1,18 @@
-<h2 class="sub_heading">
-  The Rankings
-  <% if @genre != 'All' %>
-    - <i> <%= @genre %> </i>
-  <% end %>
-</h2>
-<div class="rankings">
-  <% if @concerts.empty? && @genre == 'All' %>
-       <p> There are no concerts. Add some! </p>
-  <% elsif @concerts.empty? %>
-    <p> Your search turned up empty. Time to add your favorite concert to our website! </p>
-  <% else %>
-    <table class="center">
+<div class="rankings_header">
+  Events shown: <%= select_tag 'rankings_size', 
+      options_for_select([ '10', '20', '50', '100'], "#{selected_size}") %>
+  <div class="sort_rankings float_right">
+    Sort by: <%= select_tag 'sort_rankings', 
+      options_for_select([ 'Rank', 'Name', 'Votes'], "#{selected_sorting}") %>
+  </div>
+</div>
+<% if @concerts.empty? && @genre == 'All' %>
+     <p> There are no concerts. Add some! </p>
+<% elsif @concerts.empty? %>
+  <p> Your search turned up empty. Time to add your favorite concert to our website! </p>
+<% else %>
+  <table class="rankings_table">
+    <thead>
     	<tr>
     		<th> Rank </th>
     		<th> Name </th>
@@ -21,46 +23,46 @@
         <th> State </th>
         <th> Country </th>
     	</tr>
-    	<% @concerts.each do |c| %>
-    		<tr>
-      		<td>
-            <% if c.number_of_votes == 0 %>
-              N/A
-            <% else %>
-              <%= c.rank %>.
+    </thead>
+  	<% @concerts.each do |c| %>
+  		<tr>
+    		<td>
+          <% if c.votes == 0 %>
+            N/A
+          <% else %>
+            <%= c.rank %>.
+          <% end %>
+        </td>
+        <td>
+          <b> <%= link_to "#{c.name}", concert_path(c.id) %> </b>
+        </td>
+    		<td> 
+          <% if c.votes == 0 %>
+      			No Score
+      		<% else %>
+      			<%= number_with_precision(c.aggregate_score, precision: 1) %>
+      		<% end %>
+        </td>
+    		<td> <%= c.votes %> </td>
+    		<td> <%= c.genre.name %> </td>
+        <td> <%= c.city.name %> </td>
+        <td> <%= c.state.name %> </td>
+        <td> <%= c.country.name %> </td>
+        <% if user_signed_in? %>
+          <td>
+            <% if current_user.admin? %>
+              <%= link_to 'Delete', concert_path(c, genre: @genre), method: :delete, remote: true %>
             <% end %>
           </td>
-          <td>
-            <b> <%= link_to "#{c.name}", concert_path(c.id) %> </b>
-          </td>
-      		<td> 
-            <% if c.number_of_votes == 0 %>
-        			No Score
-        		<% else %>
-        			<%= number_with_precision(c.aggregate_score, precision: 1) %>
-        		<% end %>
-          </td>
-      		<td> <%= c.number_of_votes %> </td>
-      		<td> <%= c.genre.name %> </td>
-          <td> <%= c.city.name %> </td>
-          <td> <%= c.state.name %> </td>
-          <td> <%= c.country.name %> </td>
-          <% if user_signed_in? %>
-            <td>
-              <% if current_user.admin? %>
-                <%= link_to 'Delete', concert_path(c, genre: @genre), method: :delete, remote: true %>
-              <% end %>
-            </td>
-          <% end %>
-    		</tr>
-    	<% end %>
-    </table>
-    <div class="pagination">
-    	<%= will_paginate @concerts, container: false, param_name: 'concerts_page', 
-            params: { genre: @genre } %>
-    	<div class="pagination_info">
-        	(<%= pluralize(@concerts.total_entries, 'Concert') %>)
-    	</div>
-    </div>
-  <% end %>
-</div>
+        <% end %>
+  		</tr>
+  	<% end %>
+  </table>
+  <div class="pagination">
+  	<%= will_paginate @concerts, container: false, param_name: 'concerts_page', 
+          params: { genre: @genre } %>
+  	<div class="pagination_info">
+      	(<%= pluralize(@concerts.total_entries, 'Concert') %>)
+  	</div>
+  </div>
+<% end %>

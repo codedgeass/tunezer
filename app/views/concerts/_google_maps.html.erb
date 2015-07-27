@@ -1,3 +1,4 @@
+<script src="/assets/oms.min.js"></script>
 <script>
   // Google Maps Functionality
 
@@ -19,6 +20,16 @@
       handler.map.centerOn( {
         lat: position.coords.latitude,
         lng: position.coords.longitude
+      });
+      
+      // Create a OverlappingMarkerSpiderfier instance
+      var oms = new OverlappingMarkerSpiderfier(handler.getMap(), {
+        keepSpiderfied: true
+      });
+
+      // Track each marker with OMS
+      _.each(markers, function(marker) {
+        oms.addMarker(marker.getServiceObject());
       });
     };
   });

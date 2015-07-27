@@ -13,10 +13,10 @@
 <div class="add_event">
   <%= image_tag('missing_piece.png') %>
   <div class="add_event_message">
-    <h4> Can't Find Your Event? </h4>
+    <h4 class="heading_inside_box"> Can't Find Your Event? </h4>
     <p>
       <% if user_signed_in? %>
-        <b> <%= link_to 'Add your favorite live music event!', new_concert_path  %> </b>
+        <b> <%= link_to 'Add your favorite live music event!', new_concert_path, class: 'orangey_link'  %> </b>
       <% else %>
         Join us and show off your favorite live music to the world
       <% end %>
@@ -32,12 +32,23 @@
 </div>
 <h1 class="main_heading"> Explore </h1>
 <div class="genre_filter">
+  <h2 class="sub_heading"> Dive Into A Genre </h2>
 	<%= render partial: 'genre_filter' %>
 </div>
 <div class="google_maps_container">
-  <%= render partial: 'google_maps_heading' %>
+  <div class="google_maps_heading"> 
+    <%= render partial: 'google_maps_heading' %> 
+  </div>
   <%= render partial: 'google_maps' %>
 </div>
-<div class="rankings_container end_page">
-  <%= render partial: 'rankings' %>
+<div class="rankings">
+  <div class="rankings_heading">
+    <%= render partial: 'rankings_heading' %>
+  </div>
+  <div class="rankings_container">
+    <h2 class="heading_inside_box"> Voted by tunezer users </h2>
+    <div class="rankings_list">
+      <%= render partial: 'rankings', locals: { selected_size: '10', selected_sorting: 'Rank' } %>
+    </div>
+  </div>
 </div>

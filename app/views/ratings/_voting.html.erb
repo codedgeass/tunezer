@@ -1,29 +1,30 @@
+<h2 class="no_top_margin heading_inside_box"> Your Ratings </h2>
 <% if user_signed_in? %>
-	<h3> Your Ratings </h3>
-	<ul class="no_bottom_margin">
+	<ul class="no_top_margin">
 		<li class="voting_stars"> 
-			The People 
-      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'people_score', concert_id: @concert.id } %> 
+			<h4 class="category"> The Music </h4>
+      <%= render partial: 'ratings/voting_form', locals: { class_name: 'music_score', concert_id: @concert.id } %> 
 		</li>
 		<li class="voting_stars"> 
-			The Music 
-      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'music_score', concert_id: @concert.id } %> 
-		</li>
-		<br>
-		<li class="voting_stars"> 
-			The Venue 
-      <%= render partial: 'ratings/voting_forms', locals: { class_name: 'venue_score', concert_id: @concert.id } %> 
+			<h4 class="category"> The Venue </h4>
+      <%= render partial: 'ratings/voting_form', locals: { class_name: 'venue_score', concert_id: @concert.id } %> 
 		</li>
 		<li class="voting_stars"> 
-			The Atmosphere 
-      <%= render partial: 'ratings/voting_forms', 
-            locals: { class_name: 'atmosphere_score', concert_id: @concert.id } %> 
+			<h4 class="category"> The People </h4>
+      <%= render partial: 'ratings/voting_form', locals: { class_name: 'people_score', concert_id: @concert.id } %> 
+		</li>
+		<li class="voting_stars"> 
+			<h4 class="category"> The Atmosphere </h4>
+      <%= 
+        render partial: 'ratings/voting_form', 
+          locals: { class_name: 'atmosphere_score', concert_id: @concert.id } 
+      %> 
 		</li>
 	</ul>
 	<div id="vote_counted">
 		<% if @rating %>
 			<% if @rating.complete? == false %>
-				<p> Your vote won't be counted until you've voted in all categories. </p>
+				<p class="notice"> Your rating won't be counted until you've voted in every category </p>
 			<% end %>
 		<% else %>
 			<p> Cast your vote! </p>
@@ -31,7 +32,7 @@
 	</div>
 <% else %>
 	<p> 
-    To vote for a concert, <%= link_to 'Sign In', new_user_session_path %>, or 
-	  <%= link_to 'Sign Up', new_user_registration_path %> if you haven't already. 
+    To vote for a concert, <%= link_to 'Sign In', new_user_session_path %> or 
+	  <%= link_to 'Sign Up', new_user_registration_path %> if you haven't already!
   </p>
 <% end %>

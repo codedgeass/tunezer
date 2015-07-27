@@ -1,13 +1,20 @@
 // AJAX Pagination Functionality
 
 $(function() {
-  $('.comments, #show_videos, .rankings').on('click', '.pagination a',
+  $('.rankings_list').on('click', '.pagination a',
+	function() {
+		$.getScript(this.href + '&sort=' + $('#sort_rankings').val() + '&size=' + $('#rankings_size').val() );
+		return false;
+  });
+});
+
+$(function() {
+  $('#show_videos_index').on('click', '.pagination a',
 	function() {
 		$.getScript(this.href); // URL of the link that they clicked
 		return false;
   });
 });
-
 
 // Autocomplete functionality for event searching in '/concerts'.
 
@@ -50,3 +57,17 @@ $(function() {
     }
   });
 });
+
+// Filtering options for the rankings list
+
+$(function () {
+  $('.rankings_list').on('change', '#sort_rankings', function() {
+    $.getScript('/concerts?sort=' + this.value + '&size=' + $('#rankings_size').val() )
+  })
+})
+
+$(function () {
+  $('.rankings_list').on('change', '#rankings_size', function() {
+    $.getScript('/concerts?size=' + this.value + '&sort=' + $('#sort_rankings').val() )
+  })
+})

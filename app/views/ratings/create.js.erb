@@ -1,2 +1,6 @@
-$('#voting').html('<%= escape_javascript render partial: 'ratings/voting' %>' );
-$.renderOldVotes();
+// Adjust the form to route to the `update` action instead of `create`.
+$('[id=new_rating]').append('<input name="_method" type="hidden" value="patch">');
+$('[id=new_rating]').attr({
+  'id' : 'edit_rating_<%= @rating.id %>',
+  'action' : '/ratings/<%= @rating.id %>'
+});

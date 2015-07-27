@@ -67,7 +67,7 @@ class RatingsControllerTest < ActionController::TestCase
   test 'updating a newly completed rating should incorporate the rating into a concert' do
     incomplete_rating = ratings(:edc_incomplete)
     patch :update, { id: incomplete_rating.id, concert_id: incomplete_rating.concert_id, rating_atmosphere: 5 }
-    assert_equal 2, concerts(:edc).number_of_votes
+    assert_equal 2, concerts(:edc).votes
     assert_equal 4.5, concerts(:edc).aggregate_score
   end
 end

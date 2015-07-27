@@ -8,7 +8,7 @@ swift:
   venue: 5
   atmosphere: 5
   aggregate_score: 5
-  number_of_votes: 2
+  votes: 2
   rank: 1
 
 edc:
@@ -19,7 +19,7 @@ edc:
   venue: 4
   atmosphere: 4
   aggregate_score: 4
-  number_of_votes: 1
+  votes: 1
   rank: 2
 
 ultra:
@@ -30,7 +30,7 @@ ultra:
   venue: 3
   atmosphere: 3
   aggregate_score: 3
-  number_of_votes: 1
+  votes: 1
   rank: 3
   
 ties:
@@ -41,5 +41,5 @@ ties:
   venue: 2
   atmosphere: 2
   aggregate_score: 2
-  number_of_votes: 1
+  votes: 1
   rank: 4

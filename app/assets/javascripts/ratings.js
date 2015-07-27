@@ -32,7 +32,7 @@ $(document).ready(function() {
   
 	$('#voting').on('click', 'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
     function() {
-  		$(this).siblings().removeClass('checked');
+      $(this).siblings().andSelf().removeClass('glow');
   		$(this).prevAll().andSelf().addClass('checked');
 	  }
   );

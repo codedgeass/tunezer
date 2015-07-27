@@ -1,6 +1,6 @@
 <%= form_for [@concert, @video], remote: true do |f| %>
 	<%= render 'shared/error_messages', target: @video %>
-  <p> <font size="2" color="red"> The video link must be a valid youtube URL. </font> </p>
+  <p> <font color="#ff9999"> The video link must be a valid YouTube URL. </font> </p>
 	<%= f.text_field :url %>
 	<%= f.submit value: 'Add Video' %>
 <% end %>

@@ -1,0 +1,35 @@
+form input.rating_button { 
+  display: none; 
+}
+form label.rating_button { 
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-image: url("stars.png");
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  background-position: -6px -387px;
+  background-size: 326px 450px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block; 
+  height: 46px; 
+  width: 46px; 
+  float: left;
+  zoom: 1;
+}
+  form label.rating_button.checked { 
+    background-image: url("stars.png");
+    background-position: -96px -387px;
+  }
+  form label.rating_button.glow {
+    background-image: url("stars.png");
+    background-position: -51px -387px;
+  }
+  form label.rating_button span { 
+    display: none;
+  }
+
+li.voting_stars {
+	display: inline-block;
+	margin: 5px 10px;
+}

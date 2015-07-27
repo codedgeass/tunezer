@@ -7,8 +7,12 @@
 <%= form_for @concert do |f| %>
 	<%= render 'shared/error_messages', target: @concert %>
 	<div class="field">
-    <%= f.label(:name, "Event or Performer's Name:") %>
+    <%= f.label(:name, 'Event Name:') %>
 	  <%= f.text_field :name %> 
+  </div>
+	<div class="field">
+    <%= f.label(:venue, 'Venue Name:') %>
+	  <%= f.text_field :venue %> 
   </div>
   <div class="field">
     <%= f.label :street_address %>

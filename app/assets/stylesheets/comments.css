@@ -32,13 +32,15 @@ textarea {
 }
 
 .comment_entries {
-  margin: 0 auto;
 	text-align: left;
-  width: 43em;
 }
   .comment_entries a {
     text-decoration: none;
   }
+  
+.comment_entry {
+  margin: 30px auto;
+}
 
 .comment_footer {
   margin-top: 5px;
@@ -47,4 +49,29 @@ textarea {
 .comment_header {
   margin-top: 30px;
   margin-bottom: 5px;
+}
+
+.paginator a {
+  background-image: linear-gradient(to top, rgb(252, 252, 252) 0px, rgb(248, 248, 248) 100%);
+  display: block;
+  padding: 10px 0;
+  margin: 0 auto;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  background-color: #f8f8f8;
+  border: 1px solid #d3d3d3;
+  color: #333;
+  font-size: 12px;
+  width: 920px;
+}
+  .paginator a:hover {
+    background-color: #f3f3f3;
+    background-image: linear-gradient(to top, rgb(247, 247, 247) 0px, rgb(243, 243, 243) 100%);
+    color: #333;
+  }
+
+
+#concert_comments {
+  margin: 0 20px;
 }

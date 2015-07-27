@@ -1,2 +1,5 @@
-$('.comments').html('<%= escape_javascript render partial: 'index', locals: { commentable: @commentable } %>');
+$('.comment_entries').prepend('<%= escape_javascript render partial: 'comment_entry' %>');
 $('#comment_content').val('');
+if (<%= @empty %>) {
+  $('.comment_entries .heading_inside_box').hide();
+}

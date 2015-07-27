@@ -1,6 +1,5 @@
-<h2 class="no_top_margin"> Videos </h2>
 <% if @videos.blank? %>
-  <p> <b> There are no videos to display. Add some! </b> </p>
+  <p class="heading_inside_box" style="color: white;"> There Are No Videos Yet </p>
 <% else %>
   <div>
     <% video_number = @videos.current_page * 2 - 2 %>
@@ -20,7 +19,7 @@
   		</div>
   	<% end %>
   </div>
-  <div class="pagination">
+  <div class="pagination black_bg">
   	<%= will_paginate @videos, param_name: 'videos_page', container: false, 
   		    params: { controller: 'videos', action: 'index', concert_id: @concert.id } %>
       <div class="pagination_info">

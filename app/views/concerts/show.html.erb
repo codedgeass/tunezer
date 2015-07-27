@@ -1,43 +1,69 @@
-<div class="white_bg padding_separator">
-  <h1 class="main_heading no_top_margin"> <%= @concert.name %> </h1>
-  <h2 class="address"> <%= @concert.get_address %> </h2>
-  <div id="scores">
-    <%= render partial: 'shared/display_scores', locals: { display: @concert } %> <%# TODO: No longer shared. %>
+<h1 class="main_heading"> <%= @concert.name %> </h1>
+<div class="section">
+  <h2 class="sub_heading"> Location </h2>
+  <div class="dark_bg box event_location">
+      <div class="address">
+        <%= @concert.venue.name %> <br>
+        <%= @concert.street_address %> <br>
+        <%= @concert.city.name %>, <%= @concert.state.name %> <%= @concert.zip %>
+      </div>
+      <%= render partial: 'show_google_maps' %>
   </div>
-  <div id="voting">
+</div>
+<div class="section">
+  <h2 class="sub_heading"> Scores </h2>
+    <div id="scores">
+      <%= render partial: 'display_scores' %>
+    </div>
+</div>
+<div class="section">
+  <h2 class="sub_heading"> Vote </h2>
+  <div id="voting" class="box white_bg">
     <%= render partial: 'ratings/voting', locals: { concert_id:  @concert.id } %>
   </div>
 </div>
-<div id="show_videos" class="padding_separator">
-	<%= render partial: 'videos/index' %>
-  <div id="video_not_found"></div>
-  <p> <b>
-    <% if user_signed_in? %>
-    	<%= link_to 'Add a Video', new_concert_video_path(@concert), remote: true %>
-    <% else %>
-        <%= link_to 'Sign In', new_user_session_path, class: 'orangey_link' %> or 
-        <%= link_to 'Sign Up', new_user_registration_path, class: 'orangey_link' %> to add a video for this concert!
-    <% end %>
-  </b> </p>
-  <div id="create_concert_or_video">
-    <%# `@new_video` is only used when Javascript is absent. %>
-    <%= render partial: 'videos/new' if @new_video %>
+<div class="section">
+  <h2 class="sub_heading"> Videos </h2>
+  <div id="show_videos" class="box">
+    <div id="show_videos_index">
+  	  <%= render partial: 'videos/index' %>
+    </div>
+    <p class="no_bottom_margin">
+      <% if user_signed_in? %>
+      	<b> <%= link_to 'Add A Video', new_concert_video_path(@concert), remote: true, class: 'orangey_link' %> </b>
+      <% else %>
+          <%= link_to 'Sign In', new_user_session_path, class: 'orangey_link' %> or 
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'orangey_link' %> to add a video!
+      <% end %>
+    </p>
+    <div id="create_video">
+      <%# `@new_video` is only used when Javascript is absent. %>
+      <%= render partial: 'videos/new' if @new_video %>
+    </div>
   </div>
 </div>
-<div id="concert_comments" class="padding_separator">
-  <h2 class="no_top_margin"> Comments </h2>
-  <div id="linked_comment">	
-  	<%= render partial: 'comments/linked_comment' %>
-  </div>
-  <div class="comment_form">
-    <% if user_signed_in? %>
-  	  <%= render partial: 'comments/comment_form', locals: { commentable: @concert } %>
-    <% else %>
-        <b> <%= link_to 'Sign In', new_user_session_path %> or <%= link_to 'Sign Up', new_user_registration_path %>
-        to post a comment! </b>
-    <% end %>
-  </div>
-  <div class="comments">	
-  	<%= render partial: 'comments/index', locals: { commentable: @concert }  %>
+<div class="section">
+  <h2 class="sub_heading"> Comments </h2>
+  <div class="box white_bg">
+    <div id="concert_comments">
+      <div id="linked_comment">	
+      	<%= render partial: 'comments/linked_comment' %>
+      </div>
+      <div class="comment_form">
+        <% if user_signed_in? %>
+      	  <%= render partial: 'comments/comment_form', locals: { commentable: @concert } %>
+        <% else %>
+            <b> <%= link_to 'Sign In', new_user_session_path %> or
+                <%= link_to 'Sign Up', new_user_registration_path %> to post a comment! 
+            </b>
+        <% end %>
+      </div>
+      <div class="comments">
+      	<%= render partial: 'comments/index', locals: { commentable: @concert }  %>
+        <% if @comments_count > 10 %>
+          <%= render partial: 'comments/paginator' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

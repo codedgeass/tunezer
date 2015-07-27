@@ -1,5 +1,13 @@
-$('#scores').html(
-  "<%= escape_javascript render partial: 'shared/display_scores', locals: { display: @concert } %>");
-<% if @rating_just_completed %>
-	$('#vote_counted').html("<p> Your vote for <%= @concert.name %> has just been counted! </p>");
+<% if @rating_just_completed && @concert.votes > 1 %>
+	$('#vote_counted').html(
+    '<div class="feedback_banner"> Vote counted! </div>'
+  );
+  $('#vote_counted').fadeOut({ duration: 2000, easing: 'easeInQuart' });
+  $('#scores').html('<%= escape_javascript render partial: 'concerts/display_scores' %>');
+<% elsif @rating_just_completed %>
+  $('#scores').html('<%= escape_javascript render partial: 'concerts/display_scores' %>');
+  $('#vote_counted').hide();
+  $('html, body').animate( { scrollTop: $('#scores').offset().top }, 750 );
+<% else %>
+  $('#scores').html('<%= escape_javascript render partial: 'concerts/display_scores' %>');
 <% end %>

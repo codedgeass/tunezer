@@ -53,7 +53,7 @@ class RatingsController < ApplicationController
   # These methods are used in `incorporate_updated_category`.
   
   def add_rating_to_tally
-    @concert.number_of_votes += 1
+    @concert.votes += 1
     @rating_just_completed = true
   end
   

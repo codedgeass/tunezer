@@ -1,0 +1,46 @@
+<% if @concert.votes == 0 %>
+	<h2> No Votes Have Been Counted Yet </h2>
+<% else %>
+	<ul>
+		<li class="score_box"> 
+      <span class="category"> The Music </span>
+      <span class="score"> 
+        <%= number_with_precision( @concert.music_score, precision: 2, significant: true ) %> 
+      </span>
+    </li>
+		<li class="score_box"> 
+      <span class="category"> The Venue </span>
+      <span class="score"> 
+        <%= number_with_precision( @concert.venue_score, precision: 2, significant: true ) %> 
+      </span>
+    </li>
+		<li class="score_box"> 
+      <span class="category"> The People </span>
+      <span class="score"> 
+        <%= number_with_precision( @concert.people_score, precision: 2, significant: true ) %> 
+      </span>
+    </li>
+		<li class="score_box"> 
+      <span class="category"> The Atmosphere </span>
+      <span class="score"> 
+        <%= number_with_precision( @concert.atmosphere_score, precision: 2, significant: true ) %> 
+      </span>
+    </li>
+	</ul>
+  <ul id="final_scores">
+		<li class="score_box"> 
+      <span class="category"> Final Score </span>
+      <span class="score"> 
+        <%= number_with_precision( @concert.aggregate_score, precision: 2, significant: true ) %> 
+      </span>
+    </li>
+		<li class="score_box"> 
+      <span class="category"> Ranking </span>
+      <span class="score"> <%= @concert.rank %> </span>
+    </li>
+		<li class="score_box"> 
+      <span class="category"> Votes </span>
+      <span class="score"> <%= @concert.votes %> </span>
+    </li>
+  </ul>
+<% end %>

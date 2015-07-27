@@ -1,0 +1,21 @@
+<script>
+  // Google Maps Functionality
+
+  $(function() {
+    handler = Gmaps.build('Google');
+    handler.buildMap(
+      { 
+        provider: { Zoom: 16, scrollwheel: false }, 
+        internal: { id: 'map' }
+      }, 
+      function() {
+        markers = handler.addMarkers(<%= raw @gmaps_marker.to_json %>);
+        handler.map.centerOn(markers[0]);
+      }
+    );
+  });
+</script>
+
+<div style="width: 980px">
+  <div id="map" style="width: 569px; height: 346px;"></div>
+</div>

@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @commentable = params[:comment][:commentable_type].constantize.find(params[:comment][:commentable_id])
+    @empty = @commentable.comments.empty? ? true : false
     @comment = @commentable.comments.build
     @comment.assign_attributes(comment_params)
     if @comment.valid?
@@ -10,8 +11,6 @@ class CommentsController < ApplicationController
       @comment.content = Sanitize.fragment(@comment.content)
       @comment.parse_symbols
       @comment.save!
-      @comments = @commentable.comments.page(1)
-      @comment = Comment.new
       respond_to do |format|
         format.html { redirect_to @commentable }
         format.js
@@ -26,7 +25,10 @@ class CommentsController < ApplicationController
   
   def index
     @commentable = params[:commentable_type].constantize.find(params[:commentable_id])
-    @comments = @commentable.comments.page(params[:comments_page])
+    @concert = @commentable
+    @offset = params[:offset].to_i
+    @comments = @commentable.comments.limit(10).offset(@offset * 10)
+    @offset += 1
     respond_to do |format|
       # TODO: format.html { redirect_to concert_path(id: @concert.id, comments_page: params[:comments_page]) }
       format.js
@@ -40,9 +42,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    @comment.destroy!
     @concert = Concert.find(params[:concert_id])
-    @comments = @concert.comments.page(1)
+    @comments_count = @concert.comments.count
   end
   
   private # ====================================================================================================
