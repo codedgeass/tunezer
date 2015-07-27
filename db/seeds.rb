@@ -1,10 +1,11 @@
 # Users
 
-seed_user = User.new username: 'admin', password: 'admin00', email: 'admin@tunezer.com', admin: true
+seed_user = User.new username: ENV['ADMIN_USERNAME'], password: ENV['ADMIN_PASSWORD'], 
+              email: 'admin@tunezer.com', admin: true
 seed_user.skip_confirmation!
 seed_user.save!
 
-seed_user = User.new username: 'World', password: 'world00', email: 'world@tunezer.com'
+seed_user = User.new username: ENV['WORLD_USERNAME'], password: ENV['WORLD_PASSWORD'], email: 'World@tunezer.com'
 seed_user.skip_confirmation!
 seed_user.save!
 
