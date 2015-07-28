@@ -1,8 +1,8 @@
 <div class="intro">
   <div class="intro_image"></div>
   <div class="intro_greeting">
-    <h1 class="no_top_margin"> THE BEST LIVE MUSIC? </h1>
-    <h1> WE DECIDE. </h1>
+    <h1 class="no_top_margin"> The best live music? </h1>
+    <h1> We decide. </h1>
     <p> Explore, share, and vote for your favorite live music. </p>
   </div>
 </div>
@@ -13,12 +13,12 @@
 <div class="add_event">
   <%= image_tag('missing_piece.png') %>
   <div class="add_event_message">
-    <h4 class="heading_inside_box"> Can't Find Your Event? </h4>
+    <h4 class="heading_inside_box"> Can't find your event? </h4>
     <p>
       <% if user_signed_in? %>
         <b> <%= link_to 'Add your favorite live music event!', new_concert_path, class: 'orangey_link'  %> </b>
       <% else %>
-        Join us and show off your favorite live music to the world
+        Join us and show off your favorite live music to the world!
       <% end %>
     </p>
   </div>
