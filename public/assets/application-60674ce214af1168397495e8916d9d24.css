@@ -446,7 +446,7 @@ h4.category {
   width: 980px;
 }
 
-.rankings_container {
+.rankings_list_container {
   background-color: white;
   width: 980px;
 }
@@ -456,7 +456,7 @@ h4.category {
   margin-left: 15px;
   width: 950px;
 }
-  .rankings_container .heading_inside_box {
+  .rankings_list_container .heading_inside_box {
     margin-left: 15px;
     padding-top: 15px;
   }

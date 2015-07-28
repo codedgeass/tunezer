@@ -13,16 +13,16 @@
     </div>
   </div>
 </div>
-<div class="section">
-  <h2 class="sub_heading"> Notifications </h2> 
-  <div class="box white_bg">
-    <div class="content_in_box">
-      <% if current_user.id == @profile.user_id %>
+<% if current_user.id == @profile.user_id %>
+  <div class="section">
+    <h2 class="sub_heading"> Notifications </h2> 
+    <div class="box white_bg">
+      <div class="content_in_box">
       	<h3> Notifications </h3>
         <div id="notifications">
           <%= render partial: 'notifications/index' %>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

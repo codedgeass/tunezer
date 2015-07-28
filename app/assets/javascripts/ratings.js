@@ -1,6 +1,6 @@
-// Star Voting Functionality
+// Sets up the voting stars to match the current user's cast votes.
 
-$(function() { // Sets up the stars to match the user's data
+$(function() {
 	renderOldVotes = function() {
 		var checkedId1 = $('form.people_score > input:checked').attr('id');
 		var checkedId2 = $('form.music_score > input:checked').attr('id');
@@ -14,42 +14,60 @@ $(function() { // Sets up the stars to match the user's data
 	renderOldVotes();
 });
 
-$(document).ready(function() {
-	// Makes stars glow on hover.
-	$('#voting').on('mouseenter', 'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
+
+// Makes stars glow on hover.
+
+$(function() {
+	$('#voting').on('mouseenter', 
+    'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
 		function() {
 			$(this).siblings().andSelf().removeClass('checked');
 			$(this).prevAll().andSelf().addClass('glow');
 		}
 	);
   
-	$('#voting').on('mouseout', 'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
+	$('#voting').on('mouseout', 
+    'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
 		function() {
 			$(this).siblings().andSelf().removeClass('glow');
 			renderOldVotes();
 		}
 	);
   
-	$('#voting').on('click', 'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
+	$('#voting').on('click', 
+    'form.people_score > label, form.music_score > label, form.venue_score > label, form.atmosphere_score > label',
     function() {
       $(this).siblings().andSelf().removeClass('glow');
   		$(this).prevAll().andSelf().addClass('checked');
 	  }
   );
+});
+
+
+// Submits the voting form when a star has been clicked.
+
+$(function() {
+	$('#voting').on('change', 'form.people_score', 
+    function() {
+		  $('form.people_score').submit();
+	  }
+  );
   
-	$('#voting').on('change', 'form.people_score', function() {
-		$('form.people_score').submit();
-	});
+	$('#voting').on('change', 'form.music_score', 
+    function() {
+		  $('form.music_score').submit();
+	  }
+  );
   
-	$('#voting').on('change', 'form.music_score', function() {
-		$('form.music_score').submit();
-	});
+	$('#voting').on('change', 'form.venue_score', 
+    function() {
+		  $('form.venue_score').submit();
+	  }
+  );
   
-	$('#voting').on('change', 'form.venue_score', function() {
-		$('form.venue_score').submit();
-	});
-  
-	$('#voting').on('change', 'form.atmosphere_score', function() {
-		$('form.atmosphere_score').submit();
-	});
+	$('#voting').on('change', 'form.atmosphere_score', 
+    function() {
+		  $('form.atmosphere_score').submit();
+	  }
+  );
 });

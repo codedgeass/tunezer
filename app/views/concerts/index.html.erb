@@ -6,7 +6,7 @@
     <p> Explore, share, and vote for your favorite live music. </p>
   </div>
 </div>
-<div class="event_search_container">
+<div class="section">
   <h2 class="sub_heading"> Find An Event </h2>
 	<%= render partial: 'event_search' %>
 </div>
@@ -31,7 +31,7 @@
   </div>
 </div>
 <h1 class="main_heading"> Explore </h1>
-<div class="genre_filter">
+<div class="section">
   <h2 class="sub_heading"> Dive Into A Genre </h2>
 	<%= render partial: 'genre_filter' %>
 </div>
@@ -41,11 +41,11 @@
   </div>
   <%= render partial: 'google_maps' %>
 </div>
-<div class="rankings">
+<div class="section">
   <div class="rankings_heading">
     <%= render partial: 'rankings_heading' %>
   </div>
-  <div class="rankings_container">
+  <div class="rankings_list_container">
     <h2 class="heading_inside_box"> Voted by tunezer users </h2>
     <div class="rankings_list">
       <%= render partial: 'rankings', locals: { selected_size: '10', selected_sorting: 'Rank' } %>

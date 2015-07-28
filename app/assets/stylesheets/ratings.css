@@ -1,6 +1,9 @@
+/* Classes */
+
 form input.rating_button { 
   display: none; 
 }
+
 form label.rating_button { 
   background-attachment: scroll;
   background-clip: border-box;

@@ -421,7 +421,7 @@ ul {
     width: 639px;
   }
 
-.rankings_container {
+.rankings_list_container {
   display: inline-block;
   overflow: hidden;
   width: auto;
