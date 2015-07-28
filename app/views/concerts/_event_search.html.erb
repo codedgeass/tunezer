@@ -1,4 +1,4 @@
 <%= form_tag concerts_path, method: :get, class: 'event_search_form' do %>
-  <%= text_field_tag nil, nil, placeholder: 'Enter the name of an event or performer', class: 'event_search' %>
+  <%= text_field_tag nil, nil, placeholder: 'Enter the name of an event or performer', class: 'event_search_index' %>
   <%= image_submit_tag 'search.png', disabled: true, class: 'search_image', remote: true %>
 <% end %>

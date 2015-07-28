@@ -3,13 +3,6 @@ class ConcertsController < ApplicationController
   
   def new
     @concert = Concert.new
-    if params[:new_search]
-      if params[:new_search].blank?
-        @empty_search = true
-      else
-        @concerts = Concert.where('name ILIKE ?', "%#{params[:new_search]}%").page(params[:concerts_page])
-      end
-    end
   end
   
   def create
@@ -47,7 +40,7 @@ class ConcertsController < ApplicationController
     if request.xhr?
       if params[:term] # TODO: Change to `:search`
         concerts = Concert.where('name ILIKE ?', "#{params[:term]}%").limit(10)
-        render json: concerts.map {|concert| { label: concert.name, value: "concerts/#{concert.id}" } }
+        render json: concerts.map {|concert| { label: concert.name, value: "#{concert.id}" } }
       elsif params[:concerts_page] || params[:sort] # && params[:size]
         render 'refresh_rankings'
       else # params[:genre]

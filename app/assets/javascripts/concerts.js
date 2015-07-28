@@ -22,7 +22,7 @@ $(function() {
 // Autocomplete functionality for event searching in '/concerts'.
 
 $(function() {
-  $('.event_search').autocomplete({
+  $('.event_search_form input').autocomplete({
     autoFocus: true,
     focus: 
       function( event, ui ) {
@@ -31,7 +31,7 @@ $(function() {
     source: '/concerts',
     select: 
       function( event, ui ) { 
-        window.location.href = ui.item.value;
+        window.location.pathname = 'concerts/' + ui.item.value;
         return false;
       }
   });

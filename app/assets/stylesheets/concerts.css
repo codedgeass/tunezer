@@ -134,11 +134,15 @@ h4.category {
   margin-left: 15px;
 }
 
-.event_search {
+.event_search_index {
   float: left;
   font-size: 16px;
   height: 30px;
   width: 884px;
+}
+
+.event_search_new {
+  width: 230px;
 }
 
 .feedback_banner {

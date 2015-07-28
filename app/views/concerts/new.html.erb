@@ -1,40 +1,48 @@
-<p> <b> Search for an Artist or Festival </b> </p>
-<%= form_tag new_concert_path, method: :get do %>
-    Find a Concert: <%= text_field_tag 'new_search' %>
-<% end %>
-<div id="new_rankings"></div>
-<p> <b> Or create a new one </b> </p>
-<%= form_for @concert do |f| %>
-	<%= render 'shared/error_messages', target: @concert %>
-	<div class="field">
-    <%= f.label(:name, 'Event Name:') %>
-	  <%= f.text_field :name %> 
+<div class="section">
+  <h2 class="sub_heading"> Add Your Event </h2>
+  <div class="box white_bg">
+    <div class="content_in_box">
+      <p> <b> Search for an Artist or Festival </b> </p>
+      <%= form_tag concerts_path, method: :get, class: 'event_search_form' do %>
+        <%= text_field_tag nil, nil, 
+              placeholder: 'Enter the name of an event or performer', class: 'event_search_new' %>
+      <% end %>
+      <p> <b> Or create a new one </b> </p>
+      <%= form_for @concert do |f| %>
+      	<%= render 'shared/error_messages', target: @concert %>
+      	<div class="field">
+          <%= f.label(:name, 'Event Name') %> <br>
+      	  <%= f.text_field :name %> 
+        </div>
+      	<div class="field">
+          <%= f.label(:venue, 'Venue Name') %> <br>
+      	  <%= f.text_field :venue %> 
+        </div>
+        <div class="field">
+          <%= f.label :street_address %> <br>
+          <%= f.text_field :street_address %>
+        </div>
+        <div class="field">
+          <%= f.label :city %> <br>
+          <%= f.text_field :city %>
+        </div>
+        <div class="field">
+          <%= f.label :state %> <br>
+          <%= f.text_field :state %>
+        </div>
+        <div class="field">
+          <%= f.label :zip %> <br>
+          <%= f.text_field :zip %>
+        </div>
+        <div class="field">
+          <%= f.label :country %> <br>
+          <%= f.text_field :country %>
+        </div>
+      	<% genres = ['Blues', 'Country', 'Classical', 'Electronic', 'Ethnic', 
+                     'Hip Hop', 'Jazz', 'Pop', 'R&B', 'Rock', 'Other', 'Multiple'] %>
+      	<div class="field"> Genre: <%= f.select(:genre, genres, { include_blank: true }) %> </div>
+      	<div class="actions"> <%= f.submit 'Create Event' %> </div>
+      <% end %>
+    </div>
   </div>
-	<div class="field">
-    <%= f.label(:venue, 'Venue Name:') %>
-	  <%= f.text_field :venue %> 
-  </div>
-  <div class="field">
-    <%= f.label :street_address %>
-    <%= f.text_field :street_address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
-	<% genres = ['Blues', 'Country', 'Classical', 'Electronic', 'Ethnic', 'Hip Hop', 'Jazz', 'Pop', 'R&B', 'Rock', 'Other', 'Multiple'] %>
-	<div class="field"> Genre: <%= f.select(:genre, genres, { include_blank: true }) %> </div>
-	<div class="actions"> <%= f.submit 'Create Event' %> </div>
-<% end %>
+</div>
