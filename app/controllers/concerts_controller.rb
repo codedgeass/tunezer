@@ -86,7 +86,7 @@ class ConcertsController < ApplicationController
   
   def find_concerts
     @sort = params[:sort] || 'Rank'
-    @order = params[:sort] == 'Votes' ? 'desc' : 'asc'
+    @order = ( params[:sort] == 'Votes' ? 'desc' : 'asc' )
     if @genre == 'All'
       Concert.includes(:genre, :venue, :city, :state, :country).order("#{@sort} #{@order}").
         page(params[:concerts_page]).per_page(params[:size].present? ? params[:size].to_i : 10)
