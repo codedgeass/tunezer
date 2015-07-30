@@ -62,7 +62,7 @@
   	<%= will_paginate @concerts, container: false, param_name: 'concerts_page', 
           params: { genre: @genre } %>
   	<div class="pagination_info">
-      	(<%= pluralize(@concerts.total_entries, 'Concert') %>)
+      	(<%= pluralize(@concerts.total_entries, 'Event') %>)
   	</div>
   </div>
 <% end %>
