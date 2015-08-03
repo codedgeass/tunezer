@@ -59,7 +59,7 @@
         </span>
       </div>
     </div>
-    <% if !flash.empty? %>
+    <% if !flash.empty? %> <%# TODO: Fix the display of flash messages %>
     	<div id="flash"> 
     		<% flash.keys.each do |k| %> 
     			<div class="<%= k %>">

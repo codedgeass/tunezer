@@ -31,12 +31,12 @@ class ConcertsController < ApplicationController
   
   def index
     @genre = params[:genre] || 'All'
-    @concerts = find_concerts
-    @gmaps_markers = Gmaps4rails.build_markers(@concerts) do |concert, marker|
+    @gmaps_markers = Gmaps4rails.build_markers(Concert.all) do |concert, marker|
       marker.lat concert.latitude
       marker.lng concert.longitude
       marker.infowindow render_to_string( partial: 'info_window_link', locals: { concert: concert } )
     end
+    @concerts = find_concerts
     if request.xhr?
       if params[:term] # TODO: Change to `:search`
         concerts = Concert.where('name ILIKE ?', "#{params[:term]}%").limit(10)
@@ -86,11 +86,11 @@ class ConcertsController < ApplicationController
     @sort = params[:sort] || 'Rank'
     @order = ( params[:sort] == 'Votes' ? 'desc' : 'asc' )
     if @genre == 'All'
-      Concert.includes(:genre, :venue, :city, :state, :country).order("#{@sort} #{@order}").
+      Concert.includes(:genre, :venue, :city, :state, :country).order("#{@sort} ASC").
         page(params[:concerts_page]).per_page(params[:size].present? ? params[:size].to_i : 10)
     else
       Concert.joins(:genre).where(genres: { name: params[:genre] } ).
-        preload(:genre, :venue, :city, :state, :country).order("#{@sort} #{@order}").
+        preload(:genre, :venue, :city, :state, :country).order("#{@sort} ASC").
         page(params[:concerts_page]).per_page(params[:size].present? ? params[:size].to_i : 10)
     end
   end

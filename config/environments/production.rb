@@ -63,7 +63,7 @@ Groups::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( ie6.css ie7.css  )
   
-  config.action_mailer.default_url_options = { :host => 'tunezer.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'tunezer.com' }
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",
     :port           => "25",
