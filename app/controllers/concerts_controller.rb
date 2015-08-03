@@ -23,7 +23,7 @@ class ConcertsController < ApplicationController
     if @concert.valid?
       @concert.votes = 0
       @concert.save!
-      redirect_to concerts_path, notice: "Sucessfully created #{@concert.name}"
+      redirect_to @concert
     else
       render 'new'
     end
@@ -61,11 +61,9 @@ class ConcertsController < ApplicationController
     @comment = Comment.new
     # `linked_comment` is passed from a notification in a user's profile page.
     @linked_comment = Comment.find(params[:linked_comment]) if params[:linked_comment]
-    # The next three params are passed during a redirection that occurs when Javascript is disabled. # FIXME: WRONG!
     @comments = @concert.comments.limit(10)
     @comments_count = @concert.comments.count
-    @offset = 1
-    @new_video = Video.new if params[:new_video?]
+    @comments_offset = 1
     @rating = current_user.ratings.find_by(concert_id: params[:id]) || Rating.new if user_signed_in?
   end
   
@@ -93,7 +91,7 @@ class ConcertsController < ApplicationController
     else
       Concert.joins(:genre).where(genres: { name: params[:genre] } ).
         preload(:genre, :venue, :city, :state, :country).order("#{@sort} #{@order}").
-          page(params[:concerts_page]).per_page(params[:size].present? ? params[:size].to_i : 10)
+        page(params[:concerts_page]).per_page(params[:size].present? ? params[:size].to_i : 10)
     end
   end
 end

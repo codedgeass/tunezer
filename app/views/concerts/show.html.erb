@@ -36,10 +36,7 @@
           <%= link_to 'sign up', new_user_registration_path, class: 'orangey_link' %> to add a video!
       <% end %>
     </p>
-    <div id="create_video">
-      <%# `@new_video` is only used when Javascript is absent. %>
-      <%= render partial: 'videos/new' if @new_video %>
-    </div>
+    <div id="create_video"></div>
   </div>
 </div>
 <div class="section">

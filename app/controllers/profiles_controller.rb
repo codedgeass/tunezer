@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     if @profile.update profile_params
-      redirect_to @profile, notice: 'Profile was successfully updated.'
+      redirect_to @profile
     else
       render :edit
     end

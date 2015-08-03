@@ -5,7 +5,6 @@ class VideosController < ApplicationController
     @concert = Concert.find(params[:concert_id])
     @video = Video.new
     respond_to do |format|
-      format.html { redirect_to concert_path(@concert, new_video?: true) }
       format.js
     end
   end
@@ -17,14 +16,10 @@ class VideosController < ApplicationController
       @videos = @concert.videos.page(1)
       @videos = @videos.page(@videos.total_pages)
       respond_to do |format|  
-        format.html { redirect_to @concert, 
-          notice: "Congratulations! The video at #{@video.url} was successfully added!" }
         format.js
       end
     else
       respond_to do |format|
-        format.html { redirect_to @concert, notice: 'Your video could not be added because it was
-          either not a valid youtube URL, or it already exists on our website.' }
         format.js { render 'new' }
       end
     end
@@ -34,7 +29,6 @@ class VideosController < ApplicationController
     @concert = Concert.find(params[:concert_id])
     @videos = @concert.videos.page(params[:videos_page])
     respond_to do |format|
-      format.html { redirect_to @concert, notice: 'Enable Javascript to view videos.' }
       format.js
     end
   end
@@ -42,7 +36,6 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     respond_to do |format|
-      format.html { redirect_to concert_path(@video.concert_id), notice: 'Enable Javascript to view videos.' }
       if params[:reference_video]
         format.js { render 'create_video_reference' }
       else
@@ -51,8 +44,6 @@ class VideosController < ApplicationController
     end
   rescue ActiveRecord::RecordNotFound
     respond_to do |format|
-      format.html { redirect_to concert_path(params[:concert_id]), 
-        alert: 'That video has been deleted. Sorry!' }
       format.js { render 'alert_video_not_found' }
     end
   end

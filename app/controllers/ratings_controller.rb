@@ -9,7 +9,6 @@ class RatingsController < ApplicationController
     @rating[category_name] = params[:"rating_#{category_name}"]
     @rating.save!
     respond_to do |format|
-      format.html { redirect_to concert_path(@concert.id) }
       format.js
     end
   end
@@ -23,7 +22,6 @@ class RatingsController < ApplicationController
     incorporate_updated_category(name_of_updated_category, old_rating_score) if @rating.complete?
     @rating.save!
     respond_to do |format|
-      format.html { redirect_to concert_path(@concert.id) }
       format.js
     end
   end

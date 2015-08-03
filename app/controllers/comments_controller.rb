@@ -12,12 +12,10 @@ class CommentsController < ApplicationController
       @comment.parse_symbols
       @comment.save!
       respond_to do |format|
-        format.html { redirect_to @commentable }
         format.js
       end
     else
       respond_to do |format|
-        format.html { redirect_to @commentable, message: 'Your comment is blank!' }
         format.js { render 'comment_errors' }
       end
     end
@@ -26,11 +24,10 @@ class CommentsController < ApplicationController
   def index
     @commentable = params[:commentable_type].constantize.find(params[:commentable_id])
     @concert = @commentable
-    @offset = params[:offset].to_i
-    @comments = @commentable.comments.limit(10).offset(@offset * 10)
-    @offset += 1
+    @comments_offset = params[:offset].to_i
+    @comments = @commentable.comments.limit(10).offset(@comments_offset * 10)
+    @comments_offset += 1
     respond_to do |format|
-      # TODO: format.html { redirect_to concert_path(id: @concert.id, comments_page: params[:comments_page]) }
       format.js
     end
   end
