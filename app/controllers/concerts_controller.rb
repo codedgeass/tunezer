@@ -86,11 +86,11 @@ class ConcertsController < ApplicationController
     @sort = params[:sort] || 'Rank'
     @order = ( params[:sort] == 'Votes' ? 'desc' : 'asc' )
     if @genre == 'All'
-      Concert.includes(:genre, :venue, :city, :state, :country).order("#{@sort} ASC").
+      Concert.includes(:genre, :venue, :city, :state, :country).order("#{@sort}, Name #{@order}").
         page(params[:concerts_page]).per_page(params[:size].present? ? params[:size].to_i : 10)
     else
       Concert.joins(:genre).where(genres: { name: params[:genre] } ).
-        preload(:genre, :venue, :city, :state, :country).order("#{@sort} ASC").
+        preload(:genre, :venue, :city, :state, :country).order("#{@sort}, Name #{@order}").
         page(params[:concerts_page]).per_page(params[:size].present? ? params[:size].to_i : 10)
     end
   end
