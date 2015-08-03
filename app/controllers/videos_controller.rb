@@ -50,7 +50,7 @@ class VideosController < ApplicationController
   
   def destroy
     @video = Video.find(params[:id])
-    @video.destroy
+    @video.destroy!
     @concert = Concert.find(params[:concert_id])
     calculate_video_page unless @concert.videos.size == 0
   end

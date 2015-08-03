@@ -69,7 +69,7 @@ class ConcertsController < ApplicationController
   
   def destroy
     @concert = Concert.find(params[:id])
-    @concert.destroy
+    @concert.destroy!
     @genre = params[:genre] || 'All'
     @concerts = find_concerts
   end

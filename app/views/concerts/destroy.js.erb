@@ -1,2 +1,3 @@
-$('#rankings').html('<p> Successfully deleted "<%= @concert.name %>" </p> ');
-$('#rankings').append('<%= escape_javascript render partial: 'rankings' %>');
+$('.rankings_list').html('<p> Successfully deleted "<%= @concert.name %>" </p> ');
+$('.rankings_list').append('<%= escape_javascript render partial: 'rankings', locals: 
+                             { selected_size: params[:selected_size], selected_sorting: params[:selected_sorting] } %>');

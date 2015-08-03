@@ -1,7 +1,22 @@
 $('.rankings_heading').html('<%= escape_javascript render partial: 'rankings_heading' %>');
 $('.rankings_list').html('<%= escape_javascript render partial: 'rankings', 
                                 locals: { selected_size: @size, selected_sorting: @sort } %>');
+                                
+// Update Google Maps markers
+
 handler.removeMarkers(markers);
 markers = handler.addMarkers(<%= raw @gmaps_markers.to_json %>);
+
+// Create a OverlappingMarkerSpiderfier instance
+var oms = new OverlappingMarkerSpiderfier(handler.getMap(), {
+  keepSpiderfied: true
+});
+
+// Track each marker with OMS
+_.each(markers, function(marker) {
+  oms.addMarker(marker.getServiceObject());
+});
+
+
 $('.google_maps_heading').html('<%= escape_javascript render partial: 'google_maps_heading' %>');
 $('html, body').animate( { scrollTop: $('.google_maps_container').offset().top }, 750 );

@@ -51,7 +51,8 @@
         <% if user_signed_in? %>
           <td>
             <% if current_user.admin? %>
-              <%= link_to 'Delete', concert_path(c, genre: @genre), method: :delete, remote: true %>
+              <%= link_to 'Delete', concert_path(c, genre: @genre, selected_size: selected_size, 
+                    selected_sorting: selected_sorting), method: :delete, remote: true %>
             <% end %>
           </td>
         <% end %>
