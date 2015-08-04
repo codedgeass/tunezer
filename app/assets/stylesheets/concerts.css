@@ -147,6 +147,7 @@ h4.category {
 
 .feedback_banner {
   background-color: #fcf4d8;
+  border-radius: 2px;
   color: black;
   margin: 0 auto;
   padding: 10px 0;

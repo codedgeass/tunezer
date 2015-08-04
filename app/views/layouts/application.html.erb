@@ -58,16 +58,16 @@
           <% end %>
         </span>
       </div>
+      <div id="flash_messages">
+        <% if !flash.empty? %>
+        	<div class="feedback_banner"> 
+        		<% flash.keys.each do |k| %> 
+        		  <%= flash[k] %>
+        		<% end %>	
+        	</div>
+        <% end %>
+      </div>
     </div>
-    <% if !flash.empty? %> <%# TODO: Fix the display of flash messages %>
-    	<div id="flash"> 
-    		<% flash.keys.each do |k| %> 
-    			<div class="<%= k %>">
-    				<%= flash[k] %>
-    			</div>	
-    		<% end %>	
-    	</div>
-    <% end %>
     <%= yield %>
   </body>
 </html>

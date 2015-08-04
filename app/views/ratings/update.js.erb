@@ -2,7 +2,7 @@
 	$('#vote_counted').html(
     '<div class="feedback_banner"> Vote counted! </div>'
   );
-  $('#vote_counted').fadeOut({ duration: 2000, easing: 'easeInQuart' });
+  $('#vote_counted').fadeOut({ duration: 3000, easing: 'easeInQuart' });
   $('#scores').html('<%= escape_javascript render partial: 'concerts/display_scores' %>');
 <% elsif @rating_just_completed %>
   $('#scores').html('<%= escape_javascript render partial: 'concerts/display_scores' %>');
