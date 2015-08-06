@@ -56,7 +56,7 @@ $(function() {
     function() {
       if ( $(this).hasClass('selected') ) {
         $(this).removeClass('selected');
-        $.getScript('/concerts?genre=All');
+        $.getScript('/concerts');
         return false;
       }
       else {

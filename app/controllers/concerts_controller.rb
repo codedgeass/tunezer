@@ -31,7 +31,8 @@ class ConcertsController < ApplicationController
   
   def index
     @genre = params[:genre] || 'All'
-    @gmaps_markers = Gmaps4rails.build_markers(Concert.all) do |concert, marker|
+    @gmaps_markers = Gmaps4rails.build_markers(params[:genre] ? Concert.joins(:genre).where( 
+                       genres: { name: params[:genre] } ) : Concert.all) do |concert, marker|
       marker.lat concert.latitude
       marker.lng concert.longitude
       marker.infowindow render_to_string( partial: 'info_window_link', locals: { concert: concert } )
@@ -44,7 +45,7 @@ class ConcertsController < ApplicationController
       elsif params[:concerts_page] || params[:sort] # && params[:size]
         render 'refresh_rankings'
       else # params[:genre]
-        headers['Content-Type'] = 'text/javascript; charset=utf-8' # workaround for a bug in `render_to_string`
+        headers['Content-Type'] = 'text/javascript; charset=utf-8' # Workaround for a bug in `render_to_string`.
         render 'filter_genre'
       end
     end
