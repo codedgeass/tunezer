@@ -1,6 +1,6 @@
 # Welcome to tunezer
 
-  The purpose of this website is to create a fun and engaging place for people to explore, share, and vote for their most loved, most hated, and most debated live music experiences. [**Check it out!**](http://tunezer.com).
+  The purpose of this website is to create a fun and engaging place for people to explore, share, and vote for their most loved, most hated, and most debated live music experiences. [**Check it out!**](http://tunezer.com)
   
 ## Features
 
