@@ -14,3 +14,6 @@ gem 'thin'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_12factor', group: :concert # Required by Heroku.
+
+# Hack
+gem 'eventmachine', :git => 'git://github.com/eventmachine/eventmachine.git', :branch => 'master'
