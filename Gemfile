@@ -15,3 +15,5 @@ gem 'thin'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_12factor', group: :concert # Required by Heroku.
+
+gem 'coffee-rails'  # FIXME: This should be in Rails 4 by default. Look into why it's needed.
